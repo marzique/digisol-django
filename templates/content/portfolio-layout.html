@@ -1,0 +1,158 @@
+{% extends "layout.html" %}
+
+{% block body %}
+	<div id="circles-bg">
+        <div id="particles-js" class="opaque"></div>
+        <img src="{{ url_for('static', filename='img/gradient-circle.png') }}" alt="Circle Big" class="circle big c0">
+        <img src="{{ url_for('static', filename='img/gradient-circle.png') }}" alt="Circle Small" class="circle small c0">
+    </div>
+    <!-- CONTACT FORM POP-UP -->
+    <div id="popup-contact" style="opacity: 0;" class="goback">
+        <div class="ellipsegrad">
+        </div>
+        <a  id="close-pop"><img src="../static/img/cross.png" alt="cross"></a>
+        <div class="textblock">
+            <h2>Need some consultancy?</h2>
+            <p>We like helping teams relieve the boredom and bring a new blood to their projects. Starting with a brief interview about your product and delving into the subject we come up with decisions based on our team's previous experience.</p>
+            <img src="../static/img/gradient-line.png" alt="line" class="gradline">
+        </div>
+
+        <label class="good" style="display: none;">Your message has been sent successfully!</label>
+        <label class="bad" style="display: none;">Please fill out all required fields correctly!</label>
+
+        <form action="" method="post" id="contattaci">
+            <div class="border-wrap" id="contact_name">
+                <input type="text" name="name" placeholder="Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Name'"><br>
+            </div>
+            <div class="border-wrap" id="contact_email">
+                <input type="text" name="email" placeholder="E-Mail" onfocus="this.placeholder = ''" onblur="this.placeholder = 'E-Mail'" autocomplete="off"><br>
+            </div>
+            <div class="border-wrap tallfield">
+                <textarea name="message" maxlength="150" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Message'" placeholder="Message" wrap="soft" autocomplete="off"></textarea><br>
+            </div>
+            <div class="input-file-container">
+                <input type="file" name="brif" size="40" class="inputfile" id="real-input" accept=".pdf,.doc,.docx,.rtf" aria-invalid="false" autocomplete="off" hidden/>
+                <div id="attach-text">
+                    Attach file
+                </div>
+                <a id="attach-clip"><img src="../static/img/file-clip.png" alt="clip" class="addfile"></a>
+            </div>
+            <br>
+            <input type="submit" value="Send" id="sendform">
+        </form>
+
+    </div>
+
+    <!-- /CONTACT FORM POP-UP -->
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="mobile" style="-webkit-transform:translate(-100%)">
+        <ul>
+            <li class="active">
+                <a href="#slider">MAIN PAGE</a>
+            </li>
+            <li>
+                <a href="#about-us">ABOUT US</a>
+            </li>
+            <li>
+                <a href="#services">SERVICES</a>
+            </li>
+            <li>
+                <a href="#portfolio">PORTFOLIO</a>
+            </li>
+            <li>
+                <a href="#" id="#cont-mobile" class="no-smooth-scroll">CONTACT</a>
+            </li>
+        </ul>
+        <a href="/ru" id="changelang">RU</a>
+        <br>
+        <a href="/ua" id="changelang">UA</a>
+    </div>
+    <!-- /Mobile menu -->
+
+    <!-- slides stuff -->
+    <nav id="menu">
+        {% if request.path.startswith('/ua/') %} 
+            <a href="/ru" class="desktop opaque" id="changelang_first">RU</a>
+            <a href="/" class="desktop opaque" id="changelang_second">EN</a>
+            <a href="/ua" id="stringlogo" class="opaque">
+                digisol agency
+            </a> 
+        {% elif request.path.startswith('/ru/')%}
+            <a href="/" class="desktop opaque" id="changelang_first">EN</a>
+            <a href="/ua" class="desktop opaque" id="changelang_second">UA</a>
+            <a href="/ru" id="stringlogo" class="opaque">
+                digisol agency
+            </a>
+        {% else %}
+            <a href="/ru" class="desktop opaque" id="changelang_first">RU</a>
+            <a href="/ua" class="desktop opaque" id="changelang_second">UA</a>
+            <a href="/" id="stringlogo" class="opaque">
+                digisol agency
+            </a>
+        {% endif %}
+        <div class="desktop-menu desktop opaque">
+            <ul>
+                <li class="with-hover">
+                    {% if request.path.startswith('/ua/') %} 
+                    <a href="/ua#about-us">
+                            Про Нас 
+                        </a>
+                    {% elif request.path.startswith('/ru/')%}
+                        
+                        <a href="/ru#about-us">
+                            О Нас
+                        </a>
+                    {% else %}
+                        <a href="/#about-us">
+                            About Us
+                        </a>
+                    {% endif %}
+                    <i class="hover-line"></i>
+                </li>
+                <li class="with-hover">
+                    <a href="#services">
+                        {% if request.path.startswith('/ua/') %} 
+                            Послуги
+                        {% elif request.path.startswith('/ru/')%}
+                            Услуги
+                        {% else %}
+                            Services
+                        {% endif %}
+                    </a>
+                    <i class="hover-line"></i>
+                </li>
+                <li class="with-hover">
+                    <a href="#portfolio">
+                        {% if request.path.startswith('/ua/') %} 
+                            Портфоліо
+                        {% elif request.path.startswith('/ru/')%}
+                            Портфолио
+                        {% else %}
+                            Portfolio
+                        {% endif %}
+                    </a>
+                    <i class="hover-line"></i>
+                </li>
+            </ul>
+        </div>
+        <div class="topnav-right">
+            <a id="cont" class="opaque">
+                {% if request.path.startswith('/ua/') %} 
+                    ЗВ'ЯЗАТИСЬ
+                {% elif request.path.startswith('/ru/')%}
+                    CВЯЗАТЬСЯ
+                {% else %}
+                    CONTACT US
+                {% endif %}
+            </a>
+            <a id="mobile-menu-burger" class="mobile close">
+                <img src="../static/img/burger.png" alt="menu burger">
+            </a>
+        </div>
+    </nav>  
+	{% block content %}
+		<!-- all other sections here -->
+	{% endblock content %}
+
+{% endblock body %}

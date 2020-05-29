@@ -1,0 +1,155 @@
+{% extends "portfolio-layout.html" %}
+	
+{% block content %}
+	<!-- case specific custom -->
+	<link itemprop="css" rel="stylesheet" href='{{ url_for("static", filename="css/case.css") }}'>
+    <script src='{{ url_for("static", filename="js/case.js") }}'></script>
+
+<div class="case">
+	<div class="dark-bg">
+		<h1>
+		{% if request.path.startswith('/ua/') %} 
+			Розробка сайту Not Only Fish  
+		{% elif request.path.startswith('/ru/')%}
+			Разработка сайта Not Only Fish
+		{% else %}
+			Not Only Fish Case Study
+		{% endif %}
+		</h1>
+		<a class="website-url" href="https://notonlyfish.com.ua/">notonlyfish.com.ua</a>
+		<section class="contents">
+			<h2>
+			{% if request.path.startswith('/ua/') %} 
+				Вміст
+			{% elif request.path.startswith('/ru/')%}
+				Содержимое
+			{% else %}
+				Contents
+			{% endif %}
+			</h2>
+			<div class="background centered" style="background-image: url({{ url_for('static', filename='img/portfolio/nof-bg.png') }})">
+				<img src="{{ url_for('static', filename='img/portfolio/nof-logo.svg') }}" class="logotype">
+				<img src="{{ url_for('static', filename='img/portfolio/nof-sign.svg') }}" class="sign w25">
+			</div>
+		</section>
+
+		<section class="desk">
+			
+			{% if request.path.startswith('/ua/') %} 
+				<h2>Десктоп</h2>
+				<p>Дизайн сайту виконаний в орієнтальних тонах брендингу компанії, енергійні патерни логотипу в ньому поєднуються з прямокутними формами, які підкреслюють важливу інформацію . Погляд відвідувача сайту притягується до центральної частини композиції сайту - меню яке розкривається, немов полотно,</p>
+			{% elif request.path.startswith('/ru/')%}
+				<h2>Десктоп</h2>
+				<p>Дизайн сайта выполнен в ориентальных тонах брендинга компании, энергичные паттерны логотипа в нем сочетаются с подчеркивающими важную информацию прямоугольными формами. Взгляд попавшего на сайт притягивается к центральной части композиции сайта - раскрывающемуся, словно полотно, меню.</p>
+			{% else %}
+				<h2>Desktop</h2>
+				<p>Website design is made in oriental tones of company branding, energetic logo patterns are combined with rectangular shapes that emphasize important information. The view of the site is attracted to the central part of the site’s composition - a menu that opens like a canvas.</p>
+			{% endif %}
+			
+			<img src="{{ url_for('static', filename='img/portfolio/nof-desktop.png') }}" alt="">
+		</section>
+		<section class="mob">
+			{% if request.path.startswith('/ua/') %} 
+				<h2>Мобильні пристрої</h2>
+				<p>Основна частина клієнтів ресторану використовує мобільні пристрої. Для їх зручності була розроблена мобільна версія, яка зберігає початкову концепцію і естетику веб-сайту, при цьому має інтуїтивну і зручну, для таких користувачів, навігацію.</p>
+			{% elif request.path.startswith('/ru/')%}
+				<h2>Мобильные устройства</h2>
+				<p>Основная часть клиентов ресторана использует мобильные устройства. Для их удобства была разработана мобильная версия, сохраняющая изначальную концепцию и эстетику веб-сайта, при этом имеющая интуитивную и удобную, для таких пользователей, навигацию.</p>
+			{% else %}
+				<h2>Mobile</h2>
+				<p>The majority of restaurant customers use mobile devices. For their convenience, a mobile version has been developed that preserves the original concept and aesthetics of the website, while having intuitive and convenient navigation for such users.</p>
+			{% endif %}
+			
+			<img src="{{ url_for('static', filename='img/portfolio/nof-mobile.png') }}" alt="">
+		</section>
+		<section class="technologies">
+			<div class="wrapper">
+				<img src="{{ url_for('static', filename='img/technologies/html5.svg') }}" alt="">
+				<p>HTML5</p>
+			</div>
+			<div class="wrapper">
+				<img src="{{ url_for('static', filename='img/technologies/css3.svg') }}" alt="">
+				<p>CSS3</p>
+			</div>
+			<div class="wrapper">
+				<img src="{{ url_for('static', filename='img/technologies/js.svg') }}" alt="">
+				<p>JavaScript</p>
+			</div>
+			<div class="wrapper">
+				<img src="{{ url_for('static', filename='img/technologies/jquery.svg') }}" alt="">
+				<p>jQuery</p>
+			</div>
+			<div class="wrapper">
+				<img src="{{ url_for('static', filename='img/technologies/nginx.svg') }}" alt="">
+				<p>NGINX</p>
+			</div>
+			<div class="wrapper">
+				<img src="{{ url_for('static', filename='img/technologies/figma.svg') }}" alt="">
+				<p>Figma</p>
+			</div>
+			<div class="wrapper">
+				<img src="{{ url_for('static', filename='img/technologies/cloudflare.svg') }}" alt="">
+				<p>Cloudflare</p>
+			</div>
+		</section>
+		<section class="other-projects">
+			{% if request.path.startswith('/ru') %} 
+				<h3>Другие проекты</h3>
+			{% elif request.path.startswith('/ua')%}
+				<h3>Інші проекти</h3>
+			{% else %}
+				<h3>Other projects</h3>
+			{% endif %}
+			 <div id="projects-grid">
+                <div class="project-link">
+                    <img src="{{ url_for('static', filename='img/portfolio/thumbnails/ke-bg.png') }}" class="bg">
+                    <img src="{{ url_for('static', filename='img/logos/exclusive-logo.svg') }}" class="logo">
+                    <h4>Kyiv Exclusive</h4>
+                    {% if request.path.startswith('/ru') %} 
+						<p>ДИЗАЙН/РАЗРАБОТКА/SEO</p>
+                    	<a href="{{ url_for('kyiv_exclusive_ru') }}">Посмотреть проект</a>
+					{% elif request.path.startswith('/ua')%}
+                    	<p>ДИЗАЙН/РОЗРОБКА/SEO</p>
+                    	<a href="{{ url_for('kyiv_exclusive_ua') }}">Переглянути проект</a>
+					{% else %}
+                    	<p>DESIGN/DEVELOPMENT/SEO</p>
+                    	<a href="{{ url_for('kyiv_exclusive') }}">Browse Project</a>
+					{% endif %}
+                </div>
+
+                <div class="project-link light">
+                    <img src="{{ url_for('static', filename='img/portfolio/thumbnails/uapol-bg.png') }}" alt="" class="bg">
+                    <img src="{{ url_for('static', filename='img/logos/up-logo-symbol.png') }}" class="logo up w30">
+                    <h4>UPFoundation</h4>
+                    {% if request.path.startswith('/ru') %} 
+						<p>ДИЗАЙН/РАЗРАБОТКА/SEO</p>
+                    	<a href="{{ url_for('upf_ru') }}">Посмотреть проект</a>
+					{% elif request.path.startswith('/ua')%}
+                    	<p>ДИЗАЙН/РОЗРОБКА/SEO</p>
+                    	<a href="{{ url_for('upf_ua') }}">Переглянути проект</a>
+					{% else %}
+                    	<p>DESIGN/DEVELOPMENT/SEO</p>
+                    	<a href="{{ url_for('upf') }}">Browse Project</a>
+					{% endif %}
+                </div>
+
+                <div class="project-link">
+                    <img src="{{ url_for('static', filename='img/portfolio/thumbnails/cement-bg.jpg') }}" alt="" class="bg">
+                    <img src="{{ url_for('static', filename='img/logos/cement-full-logo.png') }}" class="logo up w30">
+                    <h4>Cement UA</h4>
+                    {% if request.path.startswith('/ru') %} 
+						<p>ДИЗАЙН/РАЗРАБОТКА/SEO</p>
+                    	<a href="{{ url_for('cement_ru') }}">Посмотреть проект</a>
+					{% elif request.path.startswith('/ua')%}
+                    	<p>ДИЗАЙН/РОЗРОБКА/SEO</p>
+                    	<a href="{{ url_for('cement_ua') }}">Переглянути проект</a>
+					{% else %}
+                    	<p>DESIGN/DEVELOPMENT/SEO</p>
+                    	<a href="{{ url_for('cement') }}">Browse Project</a>
+					{% endif %}
+                </div>
+			</div>
+		</section>
+	</div>
+</div>
+{% endblock content %}

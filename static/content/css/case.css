@@ -1,0 +1,253 @@
+.case{
+	margin-top: 80px;
+}
+
+.case .dark-bg{
+	background-color: rgba(0, 0, 0, 0.9);
+	padding-top: 5%;
+}
+
+.case h1{
+	font-size: 54px;
+	margin-left: 0;
+}
+
+.case h2{
+	font-size: 40px;
+	margin-left: 0;
+}
+
+.case > .right{
+	text-align: right;
+}
+
+.contents{
+	margin-top: 60px;
+}
+
+.background {
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.background.centered{
+	flex-direction: column;
+}
+
+.background.centered .logotype{
+	width: 15%;
+	margin-bottom: 5%;
+}
+
+.background .logotype{
+	width: 20%;
+}
+
+.background .logotype.w10{
+	width: 10%;
+}
+
+.background .logotype.w15{
+	width: 15%;
+}
+
+.background .sign{
+	position: absolute;
+    left: 70%;
+    top: 70%;
+    width: 20%;
+}
+
+.background .sign.corner{
+	left: unset;
+    top: unset;
+    right: 0;
+    bottom: 0;
+    background: rgba(87, 12, 43, 0.75);
+    padding: 1% 2% 4% 1%;
+    width: 26%;
+}
+
+.background .sign.w25{
+    width: 25%;
+}
+
+.background .sign.w40{
+    width: 40%;
+}
+
+.background.centered .sign{
+	position: relative;
+	left: unset;
+	top: unset;
+}
+
+.logo{
+	margin-top: 160px;
+}
+
+.logo p.right{
+	padding-left: 70%;
+	margin-top: -30px;
+	margin-bottom: 0;
+}
+
+.logo .wrapper{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 70vh;
+	position: relative;
+	background-size: cover;
+	background-position: 30%;
+	margin-top: -10%;
+}
+
+.logo .wrapper .logotype{
+	width: 25%;
+}
+
+.logo .wrapper p{
+	width: 35%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.desk{
+	margin-top: 160px;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.mob{
+	margin-top: -30%;
+	background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.mob.mtm10{
+	margin-top: -10%;
+}
+
+
+.desk p,
+.mob p{
+	width: 35%;
+	margin-top: -30px;
+}
+
+.desk.right p,
+.mob.right p{
+	margin-left: auto;
+}
+
+.desk.right h2,
+.mob.right h2{
+	width: 35%;
+	margin-left: auto;
+}
+
+.desk img,
+.mob img{
+	width: 85%;
+    margin: 0 auto;
+    display: flex;
+}
+
+.desk img.top-lift,
+.mob img.top-lift{
+	margin-top: -10vw;
+}
+
+.technologies{
+	display: flex;
+	justify-content: center;
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 80px;
+	align-items: center;
+}
+
+.technologies img{
+	opacity: 0.6;
+	transition: opacity .1s ease-in-out;
+	height: 3vw;
+	width: 3vw;
+	object-fit: contain;
+}
+
+.technologies img:hover{
+	opacity: 1;
+}
+
+.technologies .wrapper{
+	position: relative;
+	margin: 0 20px;
+}
+
+.technologies .wrapper p{
+	position: absolute;
+    bottom: -100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    opacity: 0;
+    transition: opacity .1s ease-in-out;
+    white-space: nowrap;
+}
+
+.technologies .wrapper:hover p{
+    opacity: 1;
+}
+
+.other-projects{
+	margin-top: 75px;
+}
+
+.website-url{
+	text-decoration-line: underline;
+	color: rgba(255, 252, 251, 0.75);
+}
+
+.website-url:hover{
+	text-decoration-line: underline;
+	color: rgba(255, 252, 251, 0.95);
+}
+
+footer{
+	margin: 0 2%;
+    height: 50vh;
+    min-height: 450px;
+    z-index: -1;
+    position: relative;
+}
+
+footer .round-btn {
+    margin-top: 5%;
+}
+
+.halffoot:first-child .bullets{
+	display: none;
+}
+
+.halffoot:not(:first-child){
+	background-image: none;
+	padding: 0;
+}
+
+.halffoot:first-child{
+	display: flex;
+    flex-direction: column;
+    padding-top: 0;
+}
+
+#case-info{
+	display: none;
+}

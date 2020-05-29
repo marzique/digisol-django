@@ -1,0 +1,190 @@
+{% extends "portfolio-layout.html" %}
+	
+{% block content %}
+	<!-- case specific custom -->
+	<link itemprop="css" rel="stylesheet" href='{{ url_for("static", filename="css/case.css") }}'>
+    <script src='{{ url_for("static", filename="js/case.js") }}'></script>
+
+<div class="case">
+	<div class="dark-bg">
+		<h1>
+		{% if request.path.startswith('/ua/') %} 
+			Розробка сайту Kyiv Exclusive  
+		{% elif request.path.startswith('/ru/')%}
+			Разработка сайта Kyiv Exclusive
+		{% else %}
+			Kyiv Exclusive Case Study
+		{% endif %}
+		</h1>
+		<a class="website-url" href="https://kyiv-exclusive.com/">kyiv-exclusive.com</a>
+		<section class="contents">
+			<div class="background" style="background-image: url({{ url_for('static', filename='img/portfolio/kyiv-exclusive.png') }})">
+				<img src="{{ url_for('static', filename='img/logos/exclusive-logo.svg') }}" class="logotype">
+				<img src="{{ url_for('static', filename='img/portfolio/ke-sign.svg') }}" class="sign">
+			</div>
+		</section>
+		<section class="logo">
+			<h2 class="right">
+			{% if request.path.startswith('/ru/') %} 
+				Лого
+				</h2>
+				<p class="right">При разработке логотипа для этой компании мы использовали статую Богдана Хмельницкого и буквы с засечками в сочетании с современным шрифтом, чтобы показать, как богатая и старая история нашего города сливается с современной украинской культурой.</p>
+				<div class="wrapper" style="background-image: url({{ url_for('static', filename='img/portfolio/khmelnitskyi.png') }})">
+					<img src="{{ url_for('static', filename='img/logos/exclusive-logo.svg') }}" class="logotype">
+					<p>«Kyiv Exclusive» - это эксклюзивное туристическое агентство для клиентов, которые хотят посетить Украину и насладиться  премиальными мероприятиями с минимальными хлопотами и максимальным комфортом.</p>
+				</div>
+			{% elif request.path.startswith('/ua/')%}
+				Лого
+				</h2>
+				<p class="right">При розробці логотипу для цієї компанії ми використовували статую Богдана Хмельницького і букви із заciчками в поєднанні з сучасним шрифтом, щоб показати, як багата і стара історія нашого міста зливається з сучасною українською культурою.</p>
+				<div class="wrapper" style="background-image: url({{ url_for('static', filename='img/portfolio/khmelnitskyi.png') }})">
+					<img src="{{ url_for('static', filename='img/logos/exclusive-logo.svg') }}" class="logotype">
+					<p>«Kyiv Exclusive» - це ексклюзивне туристичне агентство для клієнтів, які хочуть відвідати Україну і насолодитися преміальними заходами з мінімальним клопотом і максимальним комфортом.</p>
+				</div>
+			{% else %}
+				Logo
+				</h2>
+				<p class="right">When developing a logo for this company we used statue of Bohdan Khmelnytsky and serif letters combined with modern font to represent how our town’s rich and old history merges with contemporary Ukrainian culture.</p>
+				<div class="wrapper" style="background-image: url({{ url_for('static', filename='img/portfolio/khmelnitskyi.png') }})">
+					<img src="{{ url_for('static', filename='img/logos/exclusive-logo.svg') }}" class="logotype">
+					<p>“Kyiv Exclusive” is a luxurious travel agency for clients that want to visit Ukraine and enjoy all the previous activities with minimum hassle and maximum comfort. </p>
+				</div>
+			{% endif %}
+		</section>
+		<section class="desk">
+			<h2>
+			{% if request.path.startswith('/ua/') %} 
+				Десктоп
+			</h2>
+				<p>Ми використовували Figma для створення каркасів і дизайнів і реалізували їх в HTML5, CSS3 і JavaScript для зовнішнього інтерфейсу. Для back-end ми використовували фреймворк Python Django для того, щоб у клієнта була можливість легко додавати і змінювати контент.</p>
+			{% elif request.path.startswith('/ru/')%}
+				Десктоп
+			</h2>
+				<p>Мы использовали Figma для создания каркасов и дизайнов и реализовали их в HTML5, CSS3 и JavaScript для внешнего интерфейса. Для back-end мы использовали Фреймворк Python Django для того, чтобы у клиента была возможность легко добавлять и изменять контент.</p>
+			{% else %}
+				Desktop
+			</h2>
+			<p>We used Figma to create wireframes and designs and implemeted them in HTML5, CSS3 and JavaScript for front-end. For back-and we used Python framework Django, so client has the ability to easily add and change content. </p>
+			{% endif %}
+			<img src="{{ url_for('static', filename='img/portfolio/ke-desktop.png') }}" alt="">
+		</section>
+		<section class="mob">
+			<h2>
+			{% if request.path.startswith('/ua/') %} 
+				Мобільні пристрої
+			</h2>
+			<p>Оскільки цільова аудиторія цієї компанії буде в основному використовувати мобільні пристрої, ми створили окрему мобільну версію, щоб забезпечити зручну взаємодію на невеликих екранах.</p>
+			{% elif request.path.startswith('/ru/')%}
+				Мобильные устройства
+			</h2>
+			<p>Поскольку целевая аудитория этой компании будет в основном использовать мобильные устройства, мы создали отдельную мобильную версию, чтобы обеспечить удобное взаимодействие на небольших экранах.</p>
+			{% else %}
+				Mobile
+			</h2>
+			<p>As target audience of this company will mainly use mobile devices we created separate mobile look to provide smooth interaction on smaller screens.</p>
+			{% endif %}
+			<img src="{{ url_for('static', filename='img/portfolio/ke-mobile.png') }}" alt="">
+		</section>
+		<section class="technologies">
+			<div class="wrapper">
+				<img src="{{ url_for('static', filename='img/technologies/html5.svg') }}" alt="">
+				<p>HTML5</p>
+			</div>
+			<div class="wrapper">
+				<img src="{{ url_for('static', filename='img/technologies/css3.svg') }}" alt="">
+				<p>CSS3</p>
+			</div>
+			<div class="wrapper">
+				<img src="{{ url_for('static', filename='img/technologies/python.svg') }}" alt="">
+				<p>Python</p>
+			</div>
+			<div class="wrapper">
+				<img src="{{ url_for('static', filename='img/technologies/django.svg') }}" alt="">
+				<p>Django</p>
+			</div>
+			<div class="wrapper">
+				<img src="{{ url_for('static', filename='img/technologies/js.svg') }}" alt="">
+				<p>JavaScript</p>
+			</div>
+			<div class="wrapper">
+				<img src="{{ url_for('static', filename='img/technologies/jquery.svg') }}" alt="">
+				<p>jQuery</p>
+			</div>
+			<div class="wrapper">
+				<img src="{{ url_for('static', filename='img/technologies/ajax.svg') }}" alt="">
+				<p>AJAX</p>
+			</div>
+			<div class="wrapper">
+				<img src="{{ url_for('static', filename='img/technologies/nginx.svg') }}" alt="">
+				<p>NGINX</p>
+			</div>
+			<div class="wrapper">
+				<img src="{{ url_for('static', filename='img/technologies/figma.svg') }}" alt="">
+				<p>Figma</p>
+			</div>
+			<div class="wrapper">
+				<img src="{{ url_for('static', filename='img/technologies/cloudflare.svg') }}" alt="">
+				<p>Cloudflare</p>
+			</div>
+		</section>
+		<section class="other-projects">
+			{% if request.path.startswith('/ru') %} 
+				<h3>Другие проекты</h3>
+			{% elif request.path.startswith('/ua')%}
+				<h3>Інші проекти</h3>
+			{% else %}
+				<h3>Other projects</h3>
+			{% endif %}
+			 <div id="projects-grid">
+                <div class="project-link">
+                    <img src="{{ url_for('static', filename='img/portfolio/thumbnails/nof-bg.png') }}" alt="" class="bg">
+                    <img src="{{ url_for('static', filename='img/logos/nof_logo_full.svg') }}" class="logo nof">
+                    <h4>Not Only Fish</h4>
+                    {% if request.path.startswith('/ru') %} 
+						<p>ДИЗАЙН/РАЗРАБОТКА/SEO</p>
+                    	<a href="{{ url_for('nof_ru') }}">Посмотреть проект</a>
+					{% elif request.path.startswith('/ua')%}
+                    	<p>ДИЗАЙН/РОЗРОБКА/SEO</p>
+                    	<a href="{{ url_for('nof_ua') }}">Переглянути проект</a>
+					{% else %}
+                    	<p>DESIGN/DEVELOPMENT/SEO</p>
+                    	<a href="{{ url_for('nof') }}">Browse Project</a>
+					{% endif %}
+                </div>
+
+                <div class="project-link light">
+                    <img src="{{ url_for('static', filename='img/portfolio/thumbnails/uapol-bg.png') }}" alt="" class="bg">
+                    <img src="{{ url_for('static', filename='img/logos/up-logo-symbol.png') }}" class="logo up w30">
+                    <h4>UPFoundation</h4>
+                    {% if request.path.startswith('/ru') %} 
+						<p>ДИЗАЙН/РАЗРАБОТКА/SEO</p>
+                    	<a href="{{ url_for('upf_ru') }}">Посмотреть проект</a>
+					{% elif request.path.startswith('/ua')%}
+                    	<p>ДИЗАЙН/РОЗРОБКА/SEO</p>
+                    	<a href="{{ url_for('upf_ua') }}">Переглянути проект</a>
+					{% else %}
+                    	<p>DESIGN/DEVELOPMENT/SEO</p>
+                    	<a href="{{ url_for('upf') }}">Browse Project</a>
+					{% endif %}
+                </div>
+
+                <div class="project-link">
+                    <img src="{{ url_for('static', filename='img/portfolio/thumbnails/cement-bg.jpg') }}" alt="" class="bg">
+                    <img src="{{ url_for('static', filename='img/logos/cement-full-logo.png') }}" class="logo up w30">
+                    <h4>Cement UA</h4>
+                    {% if request.path.startswith('/ru') %} 
+						<p>ДИЗАЙН/РАЗРАБОТКА/SEO</p>
+                    	<a href="{{ url_for('cement_ru') }}">Посмотреть проект</a>
+					{% elif request.path.startswith('/ua')%}
+                    	<p>ДИЗАЙН/РОЗРОБКА/SEO</p>
+                    	<a href="{{ url_for('cement_ua') }}">Переглянути проект</a>
+					{% else %}
+                    	<p>DESIGN/DEVELOPMENT/SEO</p>
+                    	<a href="{{ url_for('cement') }}">Browse Project</a>
+					{% endif %}
+                </div>
+			</div>
+		</section>
+	</div>
+</div>
+{% endblock content %}

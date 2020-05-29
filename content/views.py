@@ -6,6 +6,6 @@ import random
 import json
 
 
-def index(request):
+def main_page(request):
     context = {}
-    return render(request, 'content/index.html', context)
+    return render(request, 'content/main.html', context)

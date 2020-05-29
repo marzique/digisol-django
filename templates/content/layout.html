@@ -1,0 +1,412 @@
+{% load static %}
+<html lang="en">
+<head>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126638285-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-126638285-1');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{% static 'content/favicon.ico' %}">
+
+    <title>Digisol Website</title>
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        var static_root = "{% static 'content/' %}"
+    </script>
+
+    <!-- ScrollTo -->
+    <script src="{% static 'content/js/jquery-scrollto.js' %}"></script>
+
+    <!-- jQuery touchswipe -->
+    <script src="{% static 'content/js/jquery.touchSwipe.js' %}"></script>
+
+    <!-- Kick sovetnick -->
+    <script src="{% static 'content/js/kick_sovetnik.js' %}"></script>
+
+    <!-- glitch -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js"></script>
+
+    <!-- animate css/wow js  -->
+    <link rel="stylesheet" href="{% static 'content/css/animate.css' %}">
+    
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
+    <!-- lottie (SVG animations) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.7/lottie.js" type="text/javascript"></script>
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- RU fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600,700&display=swap&subset=cyrillic-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap&subset=cyrillic-ext" rel="stylesheet">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- custom -->
+    <link rel="stylesheet" href="{% static 'content/css/main.css' %}">
+    <script src="{% static 'content/js/main.js' %}"></script>
+
+    <!-- Hotjar Tracking Code for https://digisol.agency -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:1706927,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+</head>
+    
+<!-- CONTACT FORM POP-UP -->
+<div id="popup-contact" style="opacity: 0;" class="goback">
+    <div class="ellipsegrad">
+    </div>
+    <a  id="close-pop"><img src="{% static 'content/img/cross.png' %}" alt="cross"></a>
+    <div class="textblock">
+        <h2>Need some consultancy?</h2>
+        <p>We like helping teams relieve the boredom and bring a new blood to their projects. Starting with a brief interview about your product and delving into the subject we come up with decisions based on our team's previous experience.</p>
+        <img src="{% static 'content/img/gradient-line.png' %}" alt="line" class="gradline">
+    </div>
+
+    <label class="good" style="display: none;">Your message has been sent successfully!</label>
+    <label class="bad" style="display: none;">Please fill out all required fields correctly!</label>
+
+    <form action="" method="post" id="contattaci">
+        <div class="border-wrap" id="contact_name">
+            <input type="text" name="name" placeholder="Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Name'"><br>
+        </div>
+        <div class="border-wrap" id="contact_email">
+            <input type="text" name="email" placeholder="E-Mail" onfocus="this.placeholder = ''" onblur="this.placeholder = 'E-Mail'" autocomplete="off"><br>
+        </div>
+        <div class="border-wrap tallfield">
+            <textarea name="message" maxlength="150" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Message'" placeholder="Message" wrap="soft" autocomplete="off"></textarea><br>
+        </div>
+        <div class="input-file-container">
+            <input type="file" name="brif" size="40" class="inputfile" id="real-input" accept=".pdf,.doc,.docx,.rtf" aria-invalid="false" autocomplete="off" hidden/>
+            <div id="attach-text">
+                Attach file
+            </div>
+            <a id="attach-clip"><img src="{% static 'content/img/file-clip.png' %}" alt="clip" class="addfile"></a>
+        </div>
+        <br>
+        <input type="submit" value="Send" id="sendform">
+    </form>
+</div>
+<!-- preloader animation steps -->
+<i id="animat1"></i>
+<i id="animat2"></i>
+<!-- /preloader animation steps -->
+
+<div id="circles-bg">
+    <img src="{% static 'content/img/ke-main-bg.png' %}" class="bg-project active desktop" data-case="1">
+    <img src="{% static 'content/img/nof-main-bg.png' %}" class="bg-project desktop" data-case="2">
+    <img src="{% static 'content/img/upf-main-bg.png' %}" class="bg-project desktop" data-case="3">
+    <img src="{% static 'content/img/cement-main-bg.png' %}" class="bg-project desktop" data-case="4">
+    <img src="{% static 'content/img/frame.svg' %}" class="frame desktop" alt="transparent circle frame">
+    <img src="{% static 'content/img/gradient-circle.png' %}" alt="Circle Big" class="circle big c0">
+    <img src="{% static 'content/img/gradient-circle.png' %}" alt="Circle Small" class="circle small c0">
+</div>
+
+<div id="case-info" class="desktop">
+    <div class="cases">
+
+        <div class="case active" data-case="1">
+            {% if lang == 'ua' %} 
+                <h4>Розробка сайту Kyiv Exclusive</h4>
+                <p>«Kyiv Exclusive» - це ексклюзивне туристичне агентство для клієнтів, які хочуть відвідати Україну і насолодитися преміальними заходами з мінімальним клопотом і максимальним комфортом.</p>
+                <div class="round-btn dark">
+                    <a href="#">
+                        Переглянути проект
+                    </a>
+                </div>
+            {% elif lang == 'ru' %}
+                <h4>Разработка сайта Kyiv Exclusive</h4>
+                <p>«Kyiv Exclusive» - это эксклюзивное туристическое агентство для клиентов, которые хотят посетить Украину и насладиться премиальными мероприятиями с минимальными хлопотами и максимальным комфортом.</p>
+                <div class="round-btn dark">
+                    <a href="#">
+                        Просмотреть проект
+                    </a>
+                </div>
+            {% else %}
+                <h4>KE Case Study</h4>
+                <p>“Kyiv Exclusive” is a luxurious travel agency for clients that want to visit Ukraine and enjoy all the previous activities with minimum hassle and maximum comfort.</p>
+                <div class="round-btn dark">
+                    <a href="#">
+                        Browse Project
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="case" data-case="2">
+            {% if lang == 'ua' %} 
+                <h4>Розробка сайту Not Only Fish</h4>
+                <p>Ресторан азіатської кухні в мальовничому центрі столиці. Витончено, лаконічно, з пікантним смаком кращих східних традицій. Концепт ресторану - Їжа і Танці.</p>
+                <div class="round-btn dark">
+                    <a href="#">
+                        Переглянути проект
+                    </a>
+                </div>
+            {% elif lang == 'ru'%}
+                <h4>Разработка сайта Not Only Fish</h4>
+                <p>Ресторан азиатской кухни в живописном центре столицы. Утонченно, лаконично, с пикантным вкусом лучших восточных традиций. Концепт ресторана - Еда и Танцы.</p>
+                <div class="round-btn dark">
+                    <a href="#">
+                        Просмотреть проект
+                    </a>
+                </div>
+            {% else %}
+                <h4>Not Only Fish Case Study</h4>
+                <p>Asian restaurant in the picturesque center of the capital. Refined, concise, with a spicy taste of the best oriental traditions. Restaurant Concept - Food and Dancing.</p>
+                <div class="round-btn dark">
+                    <a href="#">
+                        Browse Project
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="case" data-case="3">
+            {% if lang == 'ua' %} 
+                <h4>Розробка сайту UP Foundation</h4>
+                <p>Фонд «Українська політика» - це незалежна громадська організація, що об'єднала фахівців з різних сфер гуманітарних знань навколо ідеї вивчення політичних процесів в Україні.</p>
+                <div class="round-btn dark">
+                    <a href="#">
+                        Переглянути проект
+                    </a>
+                </div>
+            {% elif lang == 'ru'%}
+                <h4>Разработка сайта UP Foundation</h4>
+                <p>Фонд «Украинская политика» – это независимая общественная организация, объединившая специалистов из разных сфер гуманитарных знаний вокруг идеи изучения политических процессов в Украине.</p>
+                <div class="round-btn dark">
+                    <a href="#">
+                        Просмотреть проект
+                    </a>
+                </div>
+            {% else %}
+                <h4>UP Foundation Case Study</h4>
+                <p>The «Ukrainian Politics Foundation» is an independent public organization that brings together experts from various fields of humanitarian knowledge around the idea of studying political processes in Ukraine.</p>
+                <div class="round-btn dark">
+                    <a href="#">
+                        Browse Project
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="case" data-case="4">
+            {% if lang == 'ua' %} 
+                <h4>Розробка сайту Cement.UA</h4>
+                <p>«Київ-Ресурс» - один з лідерів виробництва і реалізації цементу, будівельних матеріалів, виготовлення товарного бетону.</p>
+                <div class="round-btn dark">
+                    <a href="#">
+                        Переглянути проект
+                    </a>
+                </div>
+            {% elif lang == 'ru'%}
+                <h4>Разработка сайта Cement.UA</h4>
+                <p>«Киев-Ресурс» — один из лидеров производства и реализации цемента, строительных материалов, изготовления товарного бетона.</p>
+                <div class="round-btn dark">
+                    <a href="#">
+                        Просмотреть проект
+                    </a>
+                </div>
+            {% else %}
+                <h4>Cement.UA Case Study</h4>
+                <p>«Kyiv-Resource» is one of the leaders in the production and sale of cement, building materials, and the production of ready-mixed concrete.</p>
+                <div class="round-btn dark">
+                    <a href="#">
+                        Browse Project
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+
+    </div>
+    <div class="case-controls">
+        <div class="circle-border active" data-case="1">
+            <div class="circle-inner">
+                
+            </div>
+        </div>
+        <div class="circle-border" data-case="2">
+            <div class="circle-inner">
+                
+            </div>
+        </div>
+        <div class="circle-border" data-case="3">
+            <div class="circle-inner">
+                
+            </div>
+        </div>
+        <div class="circle-border" data-case="4">
+            <div class="circle-inner">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block body %}{% endblock %}
+<footer>
+    <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-id="footer">
+        <div class="halffoot" data-aos="fade-right" data-aos-delay="450" data-aos-duration="1000">
+            {% if lang == 'ru' %} 
+                <h2>Обратная связь</h2>
+                <p>
+                    Наш менеджер обработает ваш запрос и расскажет,как агентство Digisol может помочь в создании качественного продукта.<br>
+                    Команда Digisol предлагает комплекс креативного дизайна, разработки и продвижения вашего продукта:
+                </p>
+                <div class="halftext center-text-mobile round-btn">
+                    <a id="cont-footer">
+                        Связаться
+                    </a>
+                </div>
+            {% elif lang == 'ua'%}
+                <h2>Зворотній зв'язок</h2>
+                <p>
+                    Проектний менеджер обробить ваш запит і розповість, як агенція Digisol може допомогти у створенні якісного продукту.<br>
+                    Команда Digisol пропонує комплексний сервіс креативного дизайну, розробки та запуску вашого продукту:
+                </p> 
+                <div class="halftext center-text-mobile round-btn">
+                    <a id="cont-footer">
+                        Зв'язатися
+                    </a>
+                </div>
+            {% else %}
+                <h2>Contact Us</h2>
+                <p>
+                    Our project management specialists can evaluate your request and tell you how Digisol Design and Software Development agency can help you build a great product.<br>
+                    Digisol team provides all-in-one service to get your product perfectly designed, developed, tested and launched:
+
+                </p>
+                <div class="halftext center-text-mobile round-btn">
+                    <a id="cont-footer">
+                        Contact Us
+                    </a>
+                </div>
+            {% endif %}
+            <div class="bottom-socials" data-aos="fade-down" data-aos-delay="800" data-aos-duration="1000" data-aos-anchor="footer">
+                <ul>
+                    <li>
+                        <a href="https://www.facebook.com/digisol.agency/" class="facebook" target="_blank">
+                            <i class="fab fa-facebook-square"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="instagram" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.behance.net/digisol-agency/" class="behance" target="_blank">
+                            <i class="fab fa-behance-square"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="halffoot">
+            <div class="bottom-menu desktop">
+                <ul  data-aos="fade-right" data-aos-delay="450" data-aos-duration="1000" data-aos-anchor="footer">
+                    {% if lang == 'ru' %} 
+                        <li>
+                            <a href="#about-us">О НАС</a>
+                        </li>
+                        <li>
+                            <a href="#services">УСЛУГИ</a>
+                        </li>
+                        <li>
+                            <a href="#portfolio">ПОРТФОЛИО</a>
+                        </li>
+                        <li>
+                            <a href="#">БЛОГ</a>
+                        </li>
+                    {% elif lang == 'ua' %}
+                        <li>
+                            <a href="#about-us">ПРО НАС</a>
+                        </li>
+                        <li>
+                            <a href="#services">ПОСЛУГИ</a>
+                        </li>
+                        <li>
+                            <a href="#portfolio">ПОРТФОЛІО</a>
+                        </li>
+                        <li>
+                            <a href="#">БЛОГ</a>
+                        </li>
+                    {% else %}
+                        <li>
+                            <a href="#about-us">ABOUT US</a>
+                        </li>
+                        <li>
+                            <a href="#services">SERVICES</a>
+                        </li>
+                        <li>
+                            <a href="#portfolio">PORTFOLIO</a>
+                        </li>
+                        <li>
+                            <a href="#">BLOG</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="bottom-contacts" data-aos="fade-down" data-aos-delay="800" data-aos-duration="1000" data-aos-anchor="footer">
+                <div>info@digisol.agency<br><span>+38 (095) 797 50 65</span></div>
+                {% if lang == 'ru' %} 
+                    <div>ул. Маршала<br>Тимошенко<br>2л, Киев, 04212</div>
+                {% elif lang == 'ua' %}
+                    <div>вул. Маршала<br>Тимошенко<br>2л, Київ, 04212</div>
+                {% else %}
+                    <div>Marshala<br>Tymoshenka St.<br>2L, Kyiv, 04212</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</footer>
+     <!-- TAKE ME TO THE TOP btn -->
+    <a href="#" id="back-to-top" title="Back to top">
+        <div id="desktop_up">
+            {% if lang == 'ru' %} 
+                <p class="up" id="desktop_up1">вверх</p>
+                <div class="desktop-border hidden" id="desktop_up2"></div>
+                <p class="up hidden" id="desktop_up3">вернуться<br>в начало</p>
+            {% elif lang == 'ua' %}
+                <p class="up" id="desktop_up1">вгору</p>
+                <div class="desktop-border hidden" id="desktop_up2"></div>
+                <p class="up hidden" id="desktop_up3">повернутися<br>на початок</p>
+            {% else %}
+                <p class="up" id="desktop_up1">up</p>
+                <div class="desktop-border hidden" id="desktop_up2"></div>
+                <p class="up hidden" id="desktop_up3">take me<br>to the top</p>
+            {% endif %}
+        </div>
+        <p class="up" id="mobile_up">&uarr;</p>
+    </a>
+</html>

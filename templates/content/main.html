@@ -1,0 +1,355 @@
+{% extends "content/layout.html" %}
+{% load static %}
+{% block body %}
+<body>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="mobile" style="-webkit-transform:translate(-100%)">
+        <ul>
+            <li class="active">
+                <a href="#slider">MAIN PAGE</a>
+            </li>
+            <li>
+                <a href="#about-us">ABOUT US</a>
+            </li>
+            <li>
+                <a href="#services">SERVICES</a>
+            </li>
+            <li>
+                <a href="#portfolio">PORTFOLIO</a>
+            </li>
+            <li>
+                <a href="#" id="#cont-mobile" class="no-smooth-scroll">CONTACT</a>
+            </li>
+        </ul>
+        <a href="/ru" id="changelang">RU</a>
+        <br>
+        <a href="/ua" id="changelang">UA</a>
+    </div>
+    <!-- /Mobile menu -->
+
+    <!-- slides stuff -->
+    <div class="main">
+        <section id="slider">
+            <nav id="menu">
+                <a href="/ru" class="desktop opaque" id="changelang_first">RU</a>
+                <a href="/ua" class="desktop opaque" id="changelang_second">UA</a>
+                <a href="/" id="stringlogo" class="opaque">
+                    digisol agency
+                </a>
+                <div class="desktop-menu desktop opaque">
+                    <ul>
+                        <li class="with-hover">
+                            <a href="#about-us">About Us</a>
+                            <i class="hover-line"></i>
+                        </li>
+                        <li class="with-hover">
+                            <a href="#services">Services</a>
+                            <i class="hover-line"></i>
+                        </li>
+                        <li class="with-hover">
+                            <a href="#portfolio">Portfolio</a>
+                            <i class="hover-line"></i>
+                        </li>
+                    </ul>
+                </div>
+                <div class="topnav-right">
+                    <a id="cont" class="opaque">CONTACT US</a>
+                    <a id="mobile-menu-burger" class="mobile close">
+                        <img src="{% static 'content/img/burger.png' %}" alt="menu burger">
+                    </a>
+                </div>
+            </nav>
+            <!-- LOGO IMAGE -->
+            <div id="title_main">
+                <a href="#" class=".scroll-down"><img src="{% static 'content/img/digisol-d.png' %}" id="logo" class="opaque"></a>
+            </div>
+            <!-- COPYRIGHT -->
+            <div id="slider-footer" class="opaque">
+                © Digisol Agency, All rights reserved.
+            </div>
+            <!-- ARROW DOWN -->
+            <a id="scroll-down" class="desktop opaque">
+                <img src="{% static 'content/img/down-angle.png' %}" alt="">
+            </a>   
+        </section>
+        <section id="about-us">
+            <div class="dark-bg" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-id="about-us">
+                <div class="halfs-row">
+                        <!-- ABOUT US TEXT -->
+                    <div class="halfblock fromtop-animation" data-aos="fade-down" data-aos-delay="400" data-aos-duration="800">
+                        <h2>Our Team</h2>
+                        <img src="{% static 'content/img/gradient-line.png' %}" alt="line" class="gradline">
+                        <p class="halftext description">
+                            We help businesses grow by telling their story & creating amazing digital experiences. <br><br>We are the team of young yet experienced perfectionists, provides full-cycle of services helping your company to become a leading representative on the Web.
+                        </p>
+                        <div class="halftext center-text-mobile round-btn">
+                            <a href="#services">
+                                What do we do?
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- OUR BLOG TEXT -->
+                    <div class="halfblock fromtop-animation" data-aos="fade-down" data-aos-delay="450" data-aos-duration="800">
+                        <h2>Our Blog</h2>
+                        <img src="{% static 'content/img/gradient-line.png' %}" alt="line" class="gradline">
+                        <p class="halftext description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac eleifend eros, eget eleifend est. Proin venenatis faucibus massa, ac tempor enim venenatis sed. Cras dolor ante, ullamcorper ac felis at, viverra venenatis quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac eleifend eros, eget eleifend est. Proin venenatis faucibus massa.</p>
+                            <div class="halftext center-text-mobile round-btn">
+                                <a href="#">
+                                    Read more
+                                </a>
+                            </div>
+                            
+                    </div>
+                </div>
+
+                <div id="progress-block">
+                    <div class="agile" data-aos="fade-down" data-aos-delay="450" data-aos-duration="1000">
+                        <h4>Need an agile team?</h4>
+                        <p>Hire us to design, develop and promote web & mobile apps for your business</p>
+                    </div>
+                    <div id="progress-steps">
+                        <div class="step">
+                            <div class="numba">
+                                <div></div>
+                                <span>1</span>
+                            </div>
+                            <div class="step-text">
+                                <h5 data-aos="fade-down" data-aos-delay="1500" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">We advice</h5>
+                                <p data-aos="fade-down" data-aos-delay="1700" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">We'll take a look at your current state of technology, design and marketing, examine your cases and suggest you a space for improvement.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="numba">
+                                <div></div>
+                                <span>2</span>
+                            </div>
+                            <div class="step-text">
+                                <h5 data-aos="fade-down" data-aos-delay="1800" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">We design product</h5>
+                                <p data-aos="fade-down" data-aos-delay="2000" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">You bring an idea, we do all the rest. UI/UX design included.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="numba">
+                                <div></div>
+                                <span>3</span>
+                            </div>
+                            <div class="step-text">
+                                <h5 data-aos="fade-down" data-aos-delay="2100" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">We develop software</h5>
+                                <p data-aos="fade-down" data-aos-delay="2300" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Are you satisfied with your product/market fit? Then it's time to alarm frontend and backend development teams.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="numba">
+                                <div></div>
+                                <span>4</span>
+                            </div>
+                            <div class="step-text">
+                                <h5 data-aos="fade-down" data-aos-delay="2400" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">We promote product</h5>
+                                <p data-aos="fade-down" data-aos-delay="2600" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Released your product? Now it’s time to spread the word and bringing new users to enjoy it.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="dark-bg" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-id="services">
+                <div class="fromtop-animation" data-aos="fade-down" data-aos-delay="400" data-aos-duration="800">
+                    <h2>Our Services</h2>
+                    <img src="{% static 'content/img/gradient-line.png' %}" alt="line" class="gradline">
+                </div>
+
+                <div class="services-icons">
+                    <div class="service">
+                        <img src="{% static 'content/img/service1.svg' %}">
+                        <h5>Website development</h5>
+                        <p>We create pixel-perfect web-based internet apps, e-commerce sites, and social networks to give your customers more than they expect from you.</p>
+                        <a href="">CONTACT US</a>
+                    </div>
+                    <div class="service">
+                        <img src="{% static 'content/img/service2.svg' %}">
+                        <h5>SEO/SMM</h5>
+                        <p>Social media management involves so much more than just publishing content. Brands need to utilise these channels to tell their story and engage with their audience.</p>
+                        <a href="">CONTACT US</a>
+                    </div>
+                    <div class="service">
+                        <img src="{% static 'content/img/service3.svg' %}">
+                        <h5>Identics</h5>
+                        <p>We make high-quality visual designs—from concept to execution. Create and iterate on assets that reflect a brand, enforce a language, and inject beauty and life into a product.</p>
+                        <a href="">CONTACT US</a>
+                    </div>
+                    <div class="service">
+                        <img src="{% static 'content/img/service4.svg' %}">
+                        <h5>Website development</h5>
+                        <p>We create pixel-perfect web-based internet apps, e-commerce sites, and social networks to give your customers more than they expect from you.</p>
+                        <a href="">CONTACT US</a>
+                    </div>
+                </div>
+
+                <h3 data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000" >Our clients</h3>
+                <div id="clients">
+                    <div class="imgrow">
+                        <img class="client_logo child0 displayed-logo" data-aos="fade-right" data-aos-delay="800" data-aos-duration="1000" src="{% static 'content/img/logos/colins-logo.png' %}" data-aos-anchor="#clients">
+                        <span class="break1 desktop"></span>
+                        <img class="client_logo child1 displayed-logo" data-aos="fade-right" data-aos-delay="850" data-aos-duration="1000" src="{% static 'content/img/logos/exclusive-logo.svg' %}" data-aos-anchor="#clients">
+                        <span class="break2 desktop"></span>
+                        <img class="client_logo child0 hidden-logo" data-aos="fade-right" data-aos-delay="900" data-aos-duration="1000" src="{% static 'content/img/logos/leafus-logo.png' %}" data-aos-anchor="#clients">
+                        <span class="break1 desktop"></span>
+                        <img class="client_logo child0 hidden-logo" data-aos="fade-right" data-aos-delay="950" data-aos-duration="1000" src="{% static 'content/img/logos/kimberly-logo.png' %}" data-aos-anchor="#clients">
+                    </div>
+                    <div class="imgrow">
+                        <img class="client_logo child0 hidden-logo" data-aos="fade-right" data-aos-delay="850" data-aos-duration="1000" src="{% static 'content/img/logos/nestle-logo.png' %}" data-aos-anchor="#clients">
+                        <span class="break1 desktop"></span>
+                        <img class="client_logo child1 hidden-logo" data-aos="fade-right" data-aos-delay="900" data-aos-duration="1000" src="{% static 'content/img/logos/bari-logo.png' %}" id="bari" data-aos-anchor="#clients">
+                        <span class="break2 desktop"></span>
+                        <img class="client_logo child1 hidden-logo" data-aos="fade-right" data-aos-delay="1000" data-aos-duration="1000" src="{% static 'content/img/logos/nof-logo.svg' %}" data-aos-anchor="#clients">
+                        <span class="break1 desktop"></span>
+                        <img class="client_logo child1 hidden-logo" data-aos="fade-right" data-aos-delay="950" data-aos-duration="1000" src="{% static 'content/img/logos/up-logo.png' %}" data-aos-anchor="#clients">
+                        
+                    </div>
+                </div>
+                <a class="cl-prev mobile">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                <a class="cl-next mobile">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- OLD SERVICES -->
+        <section id="services-old" style="display: none;">
+            <div class="dark-bg" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-id="services">
+                <div class="fromtop-animation" data-aos="fade-down" data-aos-delay="400" data-aos-duration="800">
+                    <h2>Our Services</h2>
+                    <img src="{% static 'content/img/gradient-line.png' %}" alt="line" class="gradline">
+                </div>
+
+                <div id="services-text" class="flex">
+                    <div class="row-2 flex"> 
+                        <div class="first-col">
+                            <h5>Website development</h5>
+                            <div class="flex first-services-col">
+                                <ul>
+                                    <li class="flex"><span class="name">Landing page</span><span class="price">from 800$</span></li>
+                                    <li class="flex"><span class="name">Corporate website</span><span class="price">from 2000$</span></li>
+                                    <li class="flex"><span class="name">E-commerce</span><span class="price">from 5000$</span></li>
+                                    <li class="flex"><span class="name">Services & Portals</span><span class="price">from 8000$</span></li>
+                                    <li class="flex"><span class="name">Individual</span><span class="price">On request</span></li>
+                                </ul>
+                                <p>We create pixel-perfect web-based internet apps, e-commerce sites, and social networks to give your customers more than they could expect.</p>
+                            </div>
+                        </div>
+                        <div class="second-col">
+                            <div class="info">
+                                <h5>Identics</h5>
+                                <h6>On request</h6>
+                                <p>We make high-quality visual designs—from concept to execution. Create and iterate on assets that reflect a brand, enforce a language, and inject beauty and life into a product.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-2 flex"> 
+                        <div class="first-col">
+                            <h5>SEO/SMM</h5>
+                            <div class="flex first-services-col">
+                                <ul>
+                                    <li class="flex"><span class="name">SEO</span><span class="price">from 600$</span></li>
+                                    <li class="flex"><span class="name">SERM</span><span class="price">from 1200$</span></li>
+                                    <li class="flex"><span class="name">Content-based ads</span><span class="price">from 200$</span></li>
+                                    <li class="flex"><span class="name">SMM</span><span class="price">from 400$</span></li>
+                                </ul>
+                                <p>Social media management involves so much more than just publishing content. Brands need to utilise these channels to tell their story and engage with their audience.</p>
+                            </div>
+                        </div>
+                        <div class="second-col">
+                            <div class="info">
+                                <h5>Digital-services</h5>
+                                <h6>On request</h6>
+                                <p>We create meaningful experiences that enable business growth, transform brands & improve customer experience.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <div class="portfolio-bg" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-id="portfolio">
+                <h2>Our works</h2>
+                <img src="{% static 'content/img/gradient-line.png' %}" alt="line" class="gradline">
+                <div id="projects-grid">
+
+                    <div class="project-link">
+                        <img src="{% static 'content/img/portfolio/thumbnails/ke-bg.png' %}" class="bg">
+                        <img src="{% static 'content/img/logos/exclusive-logo.svg' %}" class="logo">
+                        <h4>Kyiv Exclusive</h4>
+                        <p>DESIGN/DEVELOPMENT/SEO</p>
+                        <a href="#">Browse Project</a>
+                    </div>
+
+                    <div class="project-link empty">
+                        <h4>Project Name</h4>
+                        <p>DESIGN/DEVELOPMENT/SEO</p>
+                        <a href="#">Browse Project</a>
+                    </div>
+
+                    <div class="project-link">
+                        <img src="{% static 'content/img/portfolio/thumbnails/nof-bg.png' %}" alt="" class="bg">
+                        <img src="{% static 'content/img/logos/nof_logo_full.svg' %}" class="logo nof">
+                        <h4>Not Only Fish</h4>
+                        <p>DESIGN/DEVELOPMENT/SEO</p>
+                        <a href="#">Browse Project</a>
+                    </div>
+
+                    <div class="project-link empty">
+                        <h4>Project Name</h4>
+                        <p>DESIGN/DEVELOPMENT/SEO</p>
+                        <a href="#">Browse Project</a>
+                    </div>
+
+                    <div class="project-link empty">
+                        <img src="{% static 'content/img/portfolio/thumbnails/bari-bg.png' %}" alt="" class="bg">
+                        <img src="{% static 'content/img/logos/bari-logo-tall.png' %}" class="logo up w30">
+                        <h4>Project Name</h4>
+                        <p>DESIGN/DEVELOPMENT/SEO</p>
+                        <a href="#">Browse Project</a>
+                    </div>
+
+                    <div class="project-link light">
+                        <img src="{% static 'content/img/portfolio/thumbnails/uapol-bg.png' %}" alt="" class="bg">
+                        <img src="{% static 'content/img/logos/up-logo-symbol.png' %}" class="logo up w30">
+                        <h4>UPFoundation</h4>
+                        <p>DESIGN/DEVELOPMENT/SEO</p>
+                        <a href="#">Browse Project</a>
+                    </div>
+                    
+                    
+                    <div class="project-link empty">
+                        <h4>Project Name</h4>
+                        <p>DESIGN/DEVELOPMENT/SEO</p>
+                        <a href="#">Browse Project</a>
+                    </div>
+
+                    <div class="project-link">
+                        <img src="{% static 'content/img/portfolio/thumbnails/cement-bg.jpg' %}" alt="" class="bg">
+                        <img src="{% static 'content/img/logos/cement-full-logo.png' %}" class="logo up w30">
+                        <h4>Cement UA</h4>
+                        <p>DESIGN/DEVELOPMENT/SEO</p>
+                        <a href="#">Browse Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <nav id="menu" class="footer-menu">
+            <a href="/" id="stringlogo" >
+                digisol agency
+            </a>
+        </nav>
+    </div>
+    <!-- always reset page scroll during reload -->
+    <script>history.scrollRestoration = "manual"</script>
+</body>
+{% endblock body %}

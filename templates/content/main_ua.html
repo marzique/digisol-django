@@ -1,0 +1,328 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<body>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="mobile" style="-webkit-transform:translate(-100%)">
+        <ul>
+            <li class="active">
+                <a href="#slider">ГОЛОВНА</a>
+            </li>
+            <li>
+                <a href="#about-us">ПРО НАС</a>
+            </li>
+            <li>
+                <a href="#services">ПОСЛУГИ</a>
+            </li>
+            <li>
+                <a href="#portfolio">ПОРТФОЛІО</a>
+            </li>
+            <li>
+                <a href="#" id="#cont-mobile" class="no-smooth-scroll">ЗВ'ЯЗАТИСЬ</a>
+            </li>
+        </ul>
+        <a href="/" id="changelang">EN</a>
+        <br>
+        <a href="/ru" id="changelang">RU</a>
+    </div>
+    <!-- /Mobile menu -->
+
+    <!-- slides stuff -->
+    <div class="main">
+        <section id="slider">
+            <nav id="menu">
+                <a href="/" class="desktop opaque" id="changelang_first">EN</a>
+                <a href="/ru" class="desktop opaque" id="changelang_second">RU</a>
+                <a href="/ua" id="stringlogo" class="opaque">
+                    digisol agency
+                </a>
+                <div class="desktop-menu desktop opaque">
+                    <ul>
+                        <li class="with-hover">
+                            <a href="#about-us">Про Нас</a>
+                            <i class="hover-line"></i>
+                        </li>
+                        <li class="with-hover">
+                            <a href="#services">Послуги</a>
+                            <i class="hover-line"></i>
+                        </li>
+                        <li class="with-hover">
+                            <a href="#portfolio">Портфоліо</a>
+                            <i class="hover-line"></i>
+                        </li>
+                    </ul>
+                </div>
+                <div class="topnav-right">
+                    <a id="cont" class="opaque">ЗВ'ЯЗАТИСЬ</a>
+                    <a id="mobile-menu-burger" class="mobile close">
+                        <img src="{{ url_for('static', filename='img/burger.png') }}" alt="menu burger">
+                    </a>
+                </div>
+            </nav>
+            <!-- LOGO IMAGE -->
+            <div id="title_main">
+                <a href="#" class=".scroll-down"><img src="{{ url_for('static', filename='img/digisol-d.png') }}" id="logo" class="opaque"></a>
+            </div>
+            <!-- COPYRIGHT -->
+            <div id="slider-footer" class="opaque" data-aos="fade-right" data-aos-delay="300" data-aos-anchor="#slider">
+                © Digisol Agency, All rights reserved.
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-behance"></i> </a>
+                <a href="https://github.com/digisol-agency" target="_blank">
+                    <i class="fab fa-github-alt"></i>
+                </a>
+            </div>
+            <!-- ARROW DOWN -->
+            <a id="scroll-down" class="desktop opaque" data-aos="fade-down" data-aos-anchor="#slider" data-aos-delay="1000" data-aos-duration="1000" data-aos-offset="400">
+                <img src="{{ url_for('static', filename='img/down-angle.png') }}" alt="">
+            </a>   
+        </section>
+        <section id="about-us">
+            <div class="dark-bg" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-id="about-us">
+                <div class="halfs-row">
+                        <!-- ABOUT US TEXT -->
+                    <div class="halfblock fromtop-animation" data-aos="fade-down" data-aos-delay="400" data-aos-duration="800">
+                        <h2>Про Нас</h2>
+                        <img src="{{ url_for('static', filename='img/gradient-line.png') }}" alt="line" class="gradline">
+                        <p class="halftext description">
+                            Ми допомагаємо компаніям зростати, розповідаємо їхню історію та створюємо дивовижні цифрові враження.<br>
+                            <br>
+                            Ми — команда молодих, втім досвідчених перфекціоністів, котрі надають повний спектр послуг, що допоможе вашій компанії впевнено завойовувати онлайн-простір.</p>
+                        <div class="halftext center-text-mobile round-btn">
+                            <a href="#services">
+                                Чим ми займаємося?
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- OUR BLOG TEXT -->
+                    <div class="halfblock fromtop-animation" data-aos="fade-down" data-aos-delay="450" data-aos-duration="800">
+                        <h2>Наш Блог</h2>
+                        <img src="{{ url_for('static', filename='img/gradient-line.png') }}" alt="line" class="gradline">
+                        <p class="halftext description">
+                                Лорем ипсум долор сит амет, вис долорес проприае ассентиор ид. Нам ех анциллае ментитум репримияуе, латине перпетуа абхорреант вих еа. Ет иусто солута цум. Ад детрахит мандамус инструцтиор иус. Натум пробатус ан сед, те яуи цорпора дигниссим адиписцинг, ут ерант апеириан сусципиантур яуи. Ех вих персиус дефинитионес. Eерант апеириан сусципиантур яуи.</p>
+                            <div class="halftext center-text-mobile round-btn">
+                                <a href="#">
+                                    Детальніше
+                                </a>
+                            </div>
+                            
+                    </div>
+                </div>
+                
+
+                <div id="progress-block">
+                    <div class="agile" data-aos="fade-down" data-aos-delay="450" data-aos-duration="1000">
+                        <h4>Потрібна креативна команда?</h4>
+                        <p>Найміть нас для створення веб-/мобільного додатку для вашого бізнесу.</p>
+                    </div>
+                    <div id="progress-steps">
+                        <div class="step">
+                            <div class="numba">
+                                <div></div>
+                                <span>1</span>
+                            </div>
+                            <div class="step-text">
+                                <h5 data-aos="fade-down" data-aos-delay="1500" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Консультуємо</h5>
+                                <p data-aos="fade-down" data-aos-delay="1700" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Ми ознайомимося з поточним станом технологій, дизайну та маркетингу вашого продукту та запропонуємо ідеї їхнього покращення.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="numba">
+                                <div></div>
+                                <span>2</span>
+                            </div>
+                            <div class="step-text">
+                                <h5 data-aos="fade-down" data-aos-delay="1800" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Створюємо дизайн продукту</h5>
+                                <p data-aos="fade-down" data-aos-delay="2000" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Ви надаєте ідею, ми робимо все інше. UI/UX дизайн.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="numba">
+                                <div></div>
+                                <span>3</span>
+                            </div>
+                            <div class="step-text">
+                                <h5 data-aos="fade-down" data-aos-delay="2100" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Розробляємо додаток</h5>
+                                <p data-aos="fade-down" data-aos-delay="2300" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Цілком задоволені виглядом продукту? Отже, час доєднати команду розробки додатку.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="numba">
+                                <div></div>
+                                <span>4</span>
+                            </div>
+                            <div class="step-text">
+                                <h5 data-aos="fade-down" data-aos-delay="2400" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Просуваємо продукт</h5>
+                                <p data-aos="fade-down" data-aos-delay="2600" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Після випуску продукту основним завданням постає організація маркетингової кампанії та залучення якомога більшої кількості користувачів.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000" >Наші клієнти</h3>
+                <div id="clients">
+                    <div class="imgrow">
+                        <img class="client_logo child0 displayed-logo" data-aos="fade-right" data-aos-delay="800" data-aos-duration="1000" src="{{ url_for('static', filename='img/logos/colins-logo.png') }}" data-aos-anchor="#clients">
+                        <span class="break1 desktop"></span>
+                        <img class="client_logo child1 displayed-logo" data-aos="fade-right" data-aos-delay="850" data-aos-duration="1000" src="{{ url_for('static', filename='img/logos/exclusive-logo.svg') }}" data-aos-anchor="#clients">
+                        <span class="break2 desktop"></span>
+                        <img class="client_logo child0 hidden-logo" data-aos="fade-right" data-aos-delay="900" data-aos-duration="1000" src="{{ url_for('static', filename='img/logos/leafus-logo.png') }}" data-aos-anchor="#clients">
+                        <span class="break1 desktop"></span>
+                        <img class="client_logo child0 hidden-logo" data-aos="fade-right" data-aos-delay="950" data-aos-duration="1000" src="{{ url_for('static', filename='img/logos/kimberly-logo.png') }}" data-aos-anchor="#clients">
+                    </div>
+                    <div class="imgrow">
+                        <img class="client_logo child0 hidden-logo" data-aos="fade-right" data-aos-delay="850" data-aos-duration="1000" src="{{ url_for('static', filename='img/logos/nestle-logo.png') }}" data-aos-anchor="#clients">
+                        <span class="break1 desktop"></span>
+                        <img class="client_logo child1 hidden-logo" data-aos="fade-right" data-aos-delay="900" data-aos-duration="1000" src="{{ url_for('static', filename='img/logos/bari-logo.png') }}" id="bari" data-aos-anchor="#clients">
+                        <span class="break2 desktop"></span>
+                        <img class="client_logo child1 hidden-logo" data-aos="fade-right" data-aos-delay="1000" data-aos-duration="1000" src="{{ url_for('static', filename='img/logos/nof-logo.svg') }}" data-aos-anchor="#clients">
+                        <span class="break1 desktop"></span>
+                        <img class="client_logo child1 hidden-logo" data-aos="fade-right" data-aos-delay="950" data-aos-duration="1000" src="{{ url_for('static', filename='img/logos/up-logo.png') }}" data-aos-anchor="#clients">
+                        
+                    </div>
+                </div>
+                <a class="cl-prev mobile">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                <a class="cl-next mobile">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+        </section>
+        <section id="services">
+            <div class="dark-bg" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-id="services">
+                <div class="fromtop-animation" data-aos="fade-down" data-aos-delay="400" data-aos-duration="800">
+                    <h2>
+                        Послуги та ціни
+                    </h2>
+                    <img src="{{ url_for('static', filename='img/gradient-line.png') }}" alt="line" class="gradline">
+                </div>
+                <div id="services-text" class="flex">
+                    <div class="row-2 flex"> 
+                        <div class="first-col">
+                            <h5>Розробка сайтів</h5>
+                            <div class="flex first-services-col">
+                                <ul>
+                                    <li class="flex"><span class="name">Лендінг</span><span class="price">від 800$</span></li>
+                                    <li class="flex"><span class="name">Корпоративний сайт</span><span class="price">від 2000$</span></li>
+                                    <li class="flex"><span class="name">Інтернет-магазин</span><span class="price">від 5000$</span></li>
+                                    <li class="flex"><span class="name">Сервіси і Портали</span><span class="price">від 8000$</span></li>
+                                    <li class="flex"><span class="name">Індивідуально </span><span class="price">за запитом</span></li>
+                                </ul>
+                                <p>Ми створюємо ідеальні, до останнього пікселя, веб-додатки, інтернет-магазини і продукти, щоб надати вашим клієнтам бажане.
+                                    </p>
+                            </div>
+                        </div>
+                        <div class="second-col">
+                            <div class="info">
+                                <h5>Айдентика</h5>
+                                <h6>За запитом</h6>
+                                <p>Створюючи бренд ми допоможемо вам сформувати уявлення вашого клієнта про бренд, викликати правильні асоціації, вдихнути життя і красу в ваш продукт.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-2 flex"> 
+                        <div class="first-col">
+                            <h5>SEO/SMM</h5>
+                            <div class="flex first-services-col">
+                                <ul>
+                                    <li class="flex"><span class="name">SEO</span><span class="price">від 600$</span></li>
+                                    <li class="flex"><span class="name">SERM</span><span class="price">від 1200$</span></li>
+                                    <li class="flex"><span class="name">Контекстна реклама</span><span class="price">від 200$</span></li>
+                                    <li class="flex"><span class="name">SMM</span><span class="price">від 400$</span></li>
+                                </ul>
+                                <p>Головне не підвищення звичайного трафіку, а вміння підвищити корисний трафік. Наша команда займається створенням і проведенням повних маркетингових і SEO-кампаній.
+                                    Менеджмент соціальних медіа — це не тільки публікація дописів, важливо вміти використовувати сучасні канали для взаємодії з аудиторією.</p>
+                            </div>
+                        </div>
+                        <div class="second-col">
+                            <div class="info">
+                                <h5>Digital-сервіси</h5>
+                                <h6>За запитом</h6>
+                                <p>Ми створюємо досвід, який сприяє зростанню бізнесу, трансформації брендів і поліпшення якості обслуговування клієнтів.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="portfolio">
+            <div class="portfolio-bg" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-id="portfolio">
+                <h2>Наші Роботи</h2>
+                <img src="{{ url_for('static', filename='img/gradient-line.png') }}" alt="line" class="gradline">
+                <div id="projects-grid">
+
+                    <div class="project-link">
+                        <img src="{{ url_for('static', filename='img/portfolio/thumbnails/ke-bg.png') }}" class="bg">
+                        <img src="{{ url_for('static', filename='img/logos/exclusive-logo.svg') }}" class="logo">
+                        <h4>Kyiv Exclusive</h4>
+                        <p>DESIGN/DEVELOPMENT/SEO</p>
+                        <a href="{{ url_for('kyiv_exclusive_ua') }}">Browse Project</a>
+                    </div>
+
+                    <div class="project-link empty">
+                        <h4>Project Name</h4>
+                        <p>DESIGN/DEVELOPMENT/SEO</p>
+                        <a href="#">Browse Project</a>
+                    </div>
+
+                    <div class="project-link">
+                        <img src="{{ url_for('static', filename='img/portfolio/thumbnails/nof-bg.png') }}" alt="" class="bg">
+                        <img src="{{ url_for('static', filename='img/logos/nof_logo_full.svg') }}" class="logo nof">
+                        <h4>Not Only Fish</h4>
+                        <p>DESIGN/DEVELOPMENT/SEO</p>
+                        <a href="{{ url_for('nof_ua') }}">Browse Project</a>
+                    </div>
+
+                    <div class="project-link empty">
+                        <h4>Project Name</h4>
+                        <p>DESIGN/DEVELOPMENT/SEO</p>
+                        <a href="#">Browse Project</a>
+                    </div>
+
+                    <div class="project-link empty">
+                        <img src="{{ url_for('static', filename='img/portfolio/thumbnails/bari-bg.png') }}" alt="" class="bg">
+                        <img src="{{ url_for('static', filename='img/logos/bari-logo-tall.png') }}" class="logo up w30">
+                        <h4>Project Name</h4>
+                        <p>DESIGN/DEVELOPMENT/SEO</p>
+                        <a href="#">Browse Project</a>
+                    </div>
+
+                    <div class="project-link light">
+                        <img src="{{ url_for('static', filename='img/portfolio/thumbnails/uapol-bg.png') }}" alt="" class="bg">
+                        <img src="{{ url_for('static', filename='img/logos/up-logo-symbol.png') }}" class="logo up w30">
+                        <h4>UPFoundation</h4>
+                        <p>DESIGN/DEVELOPMENT/SEO</p>
+                        <a href="{{ url_for('upf_ua') }}">Browse Project</a>
+                    </div>
+                    
+                    
+                    <div class="project-link empty">
+                        <h4>Project Name</h4>
+                        <p>DESIGN/DEVELOPMENT/SEO</p>
+                        <a href="#">Browse Project</a>
+                    </div>
+
+                    <div class="project-link">
+                        <img src="{{ url_for('static', filename='img/portfolio/thumbnails/cement-bg.jpg') }}" alt="" class="bg">
+                        <img src="{{ url_for('static', filename='img/logos/cement-full-logo.png') }}" class="logo up w30">
+                        <h4>Cement UA</h4>
+                        <p>DESIGN/DEVELOPMENT/SEO</p>
+                        <a href="{{ url_for('cement_ua') }}">Browse Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <nav id="menu" class="footer-menu">
+            <a href="/" id="stringlogo" >
+                digisol agency
+            </a>
+        </nav>
+    </div>
+    
+    <!-- always reset page scroll during reload -->
+    <script>history.scrollRestoration = "manual"</script>
+</body>
+{% endblock body %}

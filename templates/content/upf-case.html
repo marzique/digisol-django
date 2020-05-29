@@ -1,0 +1,164 @@
+{% extends "portfolio-layout.html" %}
+	
+{% block content %}
+	<!-- case specific custom -->
+	<link itemprop="css" rel="stylesheet" href='{{ url_for("static", filename="css/case.css") }}'>
+    <script src='{{ url_for("static", filename="js/case.js") }}'></script>
+
+<div class="case">
+	<div class="dark-bg">
+		<h1>
+		{% if request.path.startswith('/ua/') %} 
+			Розробка сайту UP Foundation  
+		{% elif request.path.startswith('/ru/')%}
+			Разработка сайта UP Foundation
+		{% else %}
+			UP Foundation Case Study
+		{% endif %}
+		</h1>
+		<a class="website-url" href="https://uapolicy.org/">uapolicy.org</a>
+		<section class="contents">
+			<h2>
+			{% if request.path.startswith('/ua/') %} 
+				Вміст
+			{% elif request.path.startswith('/ru/')%}
+				Содержимое
+			{% else %}
+				Contents
+			{% endif %}
+			</h2>
+			<div class="background centered" style="background-image: url({{ url_for('static', filename='img/portfolio/upf-bg.png') }})">
+				<img src="{{ url_for('static', filename='img/logos/up-logo-symbol.png') }}" class="logotype w10">
+				<img src="{{ url_for('static', filename='img/portfolio/upf-sign.svg') }}" class="sign w40">
+			</div>
+		</section>
+
+		<section class="desk right">
+			{% if request.path.startswith('/ru/') %}
+				<h2>Десктоп</h2>
+				<p>Дизайн веб-сайта оптимизирован для просмотра проектов, автором которых является UP Foundation, при этом оставляя возможность пользоваться им, как новостным ресурсом. <br><br>Для разширения возможностей сайта, созданного с помощью WordPress, были написаны дополнительные модули с использованием фреймворка  Django - виджет-календарь с обновляющимся списком ивентов.
+				</p>
+			{% elif request.path.startswith('/ua/')%}
+				<h2>Десктоп</h2>
+				<p>Дизайн веб-сайту оптимізовано для перегляду проектів, автором яких є UP Foundation, при цьому залишаючи можливість користуватися ним, як новинним ресурсом. <br> <br> Для разширения можливостей сайту, який був створений за допомогою WordPress, були написані додаткові модулі з використанням фреймворку Django - віджет-календар з списком івентів який оновлюється.
+				</p>
+			{% else %}
+				<h2>Desktop</h2>
+				<p>Website design is optimized for project browsing, created by the UP Foundation, while leaving the opportunity to use it as a news resource. <br> <br> To expand the capabilities of the website created using WordPress, additional modules were written using the Django framework - a calendar widget with an updatable list of events.
+				</p>
+			{% endif %}
+			<img src="{{ url_for('static', filename='img/portfolio/upf-desktop.png') }}" alt="" class="top-lift">
+		</section>
+		<section class="mob mtm10 right">
+			{% if request.path.startswith('/ua/') %} 
+				<h2>Мобільні пристрої</h2>
+				<p>Розроблено мобільну версію, що дозволяє користувачеві на пристрої з невеликим екраном значно зручніше переглядати медіа-контент і інфографіки різних типів.</p>
+			{% elif request.path.startswith('/ru/')%}
+				<h2>Мобильные устройства</h2>
+				<p>Разработання мобильная версия позволяет пользователю на устройстве с небольшим экраном значительно удобнее просматривать медиа-контент и инфографики разных типов.</p>
+			{% else %}
+				<h2>Mobile</h2>
+				<p>The developed mobile version allows the user to view media content and infographics of various types on a device with a small screen.</p>
+			{% endif %}
+			
+			<img src="{{ url_for('static', filename='img/portfolio/upf-mobile.png') }}" alt="">
+		</section>
+		<section class="technologies">
+			<div class="wrapper">
+				<img src="{{ url_for('static', filename='img/technologies/html5.svg') }}" alt="">
+				<p>HTML5</p>
+			</div>
+			<div class="wrapper">
+				<img src="{{ url_for('static', filename='img/technologies/css3.svg') }}" alt="">
+				<p>CSS3</p>
+			</div>
+			<div class="wrapper">
+				<img src="{{ url_for('static', filename='img/technologies/wordpress.svg') }}" alt="">
+				<p>WordPress</p>
+			</div>
+			<div class="wrapper">
+				<img src="{{ url_for('static', filename='img/technologies/php.svg') }}" alt="">
+				<p>PHP</p>
+			</div>
+			<div class="wrapper">
+				<img src="{{ url_for('static', filename='img/technologies/js.svg') }}" alt="">
+				<p>JavaScript</p>
+			</div>
+			<div class="wrapper">
+				<img src="{{ url_for('static', filename='img/technologies/jquery.svg') }}" alt="">
+				<p>jQuery</p>
+			</div>
+			<div class="wrapper">
+				<img src="{{ url_for('static', filename='img/technologies/nginx.svg') }}" alt="">
+				<p>NGINX</p>
+			</div>
+			<div class="wrapper">
+				<img src="{{ url_for('static', filename='img/technologies/figma.svg') }}" alt="">
+				<p>Figma</p>
+			</div>
+			<div class="wrapper">
+				<img src="{{ url_for('static', filename='img/technologies/cloudflare.svg') }}" alt="">
+				<p>Cloudflare</p>
+			</div>
+		</section>
+		<section class="other-projects">
+			{% if request.path.startswith('/ru') %} 
+				<h3>Другие проекты</h3>
+			{% elif request.path.startswith('/ua')%}
+				<h3>Інші проекти</h3>
+			{% else %}
+				<h3>Other projects</h3>
+			{% endif %}
+			 <div id="projects-grid">
+                <div class="project-link">
+                    <img src="{{ url_for('static', filename='img/portfolio/thumbnails/ke-bg.png') }}" class="bg">
+                    <img src="{{ url_for('static', filename='img/logos/exclusive-logo.svg') }}" class="logo">
+                    	<h4>Kyiv Exclusive</h4>
+                    {% if request.path.startswith('/ru') %} 
+						<p>ДИЗАЙН/РАЗРАБОТКА/SEO</p>
+                    	<a href="{{ url_for('kyiv_exclusive_ru') }}">Посмотреть проект</a>
+					{% elif request.path.startswith('/ua')%}
+                    	<p>ДИЗАЙН/РОЗРОБКА/SEO</p>
+                    	<a href="{{ url_for('kyiv_exclusive_ua') }}">Переглянути проект</a>
+					{% else %}
+                    	<p>DESIGN/DEVELOPMENT/SEO</p>
+                    	<a href="{{ url_for('kyiv_exclusive') }}">Browse Project</a>
+					{% endif %}
+                </div>
+
+                <div class="project-link">
+                    <img src="{{ url_for('static', filename='img/portfolio/thumbnails/nof-bg.png') }}" alt="" class="bg">
+                    <img src="{{ url_for('static', filename='img/logos/nof_logo_full.svg') }}" class="logo nof">
+                    <h4>Not Only Fish</h4>
+                    {% if request.path.startswith('/ru') %} 
+						<p>ДИЗАЙН/РАЗРАБОТКА/SEO</p>
+                    	<a href="{{ url_for('nof_ru') }}">Посмотреть проект</a>
+					{% elif request.path.startswith('/ua')%}
+                    	<p>ДИЗАЙН/РОЗРОБКА/SEO</p>
+                    	<a href="{{ url_for('nof_ua') }}">Переглянути проект</a>
+					{% else %}
+                    	<p>DESIGN/DEVELOPMENT/SEO</p>
+                    	<a href="{{ url_for('nof') }}">Browse Project</a>
+					{% endif %}
+                </div>
+
+                <div class="project-link">
+                    <img src="{{ url_for('static', filename='img/portfolio/thumbnails/cement-bg.jpg') }}" alt="" class="bg">
+                    <img src="{{ url_for('static', filename='img/logos/cement-full-logo.png') }}" class="logo up w30">
+                    <h4>Cement UA</h4>
+                    {% if request.path.startswith('/ru') %} 
+						<p>ДИЗАЙН/РАЗРАБОТКА/SEO</p>
+                    	<a href="{{ url_for('cement_ru') }}">Посмотреть проект</a>
+					{% elif request.path.startswith('/ua')%}
+                    	<p>ДИЗАЙН/РОЗРОБКА/SEO</p>
+                    	<a href="{{ url_for('cement_ua') }}">Переглянути проект</a>
+					{% else %}
+                    	<p>DESIGN/DEVELOPMENT/SEO</p>
+                    	<a href="{{ url_for('cement') }}">Browse Project</a>
+					{% endif %}
+                </div>
+			</div>
+		</section>
+	</div>
+</div>
+{% endblock content %}
