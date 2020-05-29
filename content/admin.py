@@ -1,3 +1,8 @@
 from django.contrib import admin
+from content.models import SliderPageText
 
-# Register your models here.
+@admin.register(SliderPageText)
+class SliderPageText(admin.ModelAdmin):
+
+    list_display = ('id', 'copyright')
+    
