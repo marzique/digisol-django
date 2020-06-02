@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, Http404, JsonResponse
 from django.core.mail import EmailMessage
 from django.views.decorators.csrf import csrf_exempt
-from content.models import SliderPageText
+from content.models import SliderPageText, UserRequest
 
 
 
@@ -22,6 +22,11 @@ def form_submit(request):
         name = request.POST['name']
         email = request.POST['email']
         message = request.POST['message']
-        brief = request.FILES['brif']
+        if request.FILES:
+            if 'brif' in request.FILES:
+                brief = request.FILES['brif']
+
+        user_request = UserRequest(name=name, email=email, message=message)
+        user_request.save()
         
         return JsonResponse({'message': 'noice'})
