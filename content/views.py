@@ -25,8 +25,14 @@ def form_submit(request):
         if request.FILES:
             if 'brif' in request.FILES:
                 brief = request.FILES['brif']
-
+        # save request
         user_request = UserRequest(name=name, email=email, message=message)
         user_request.save()
+
+        # send request to mail
+        body = f"Имя: {name} \nEmail: {email} \nКомментарий: {message}"
+        email = EmailMessage(f'[digisol.website] {email} заполнил форму на сайте!',
+                             body, to=['marzique@gmail.com', 'admin@digisol.agency'])
+        email.send()
         
         return JsonResponse({'message': 'noice'})

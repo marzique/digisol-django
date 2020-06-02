@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var preloader = true;
     }
 
-    preloader = false; // temporary
+    // preloader = false; // temporary
 
     // ON/OFF preloader animation for dev puproses
     if (!preloader){
