@@ -431,6 +431,7 @@ a:hover, a {
   width: 500px;
   margin-left: -230px;
   text-align: center;
+  white-space: nowrap;
 }
 
 .desktop-menu ul{

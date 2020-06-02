@@ -14,7 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
         var preloader = true;
     }
 
-     // ON/OFF preloader animation for dev puproses
+    // preloader = false; // temporary
+
+    // ON/OFF preloader animation for dev puproses
     if (!preloader){
         $("#animat2, #animat1").remove();
         $("#logo, #stringlogo, .desktop-menu, #changelang, #cont, #slider-footer, #scroll-down").removeClass("opaque")

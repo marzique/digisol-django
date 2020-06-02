@@ -38,22 +38,56 @@
                 </a>
                 <div class="desktop-menu desktop opaque">
                     <ul>
-                        <li class="with-hover">
-                            <a href="#about-us">About Us</a>
-                            <i class="hover-line"></i>
-                        </li>
-                        <li class="with-hover">
-                            <a href="#services">Services</a>
-                            <i class="hover-line"></i>
-                        </li>
-                        <li class="with-hover">
-                            <a href="#portfolio">Portfolio</a>
-                            <i class="hover-line"></i>
-                        </li>
+                        {% if lang == 'ua' %} 
+                            <li class="with-hover">
+                                <a href="#about-us">про нас</a>
+                                <i class="hover-line"></i>
+                            </li>
+                            <li class="with-hover">
+                                <a href="#services">послуги</a>
+                                <i class="hover-line"></i>
+                            </li>
+                            <li class="with-hover">
+                                <a href="#portfolio">портфоліо</a>
+                                <i class="hover-line"></i>
+                            </li>
+                        {% elif lang == 'ru'%}
+                            <li class="with-hover">
+                                <a href="#about-us">О нас</a>
+                                <i class="hover-line"></i>
+                            </li>
+                            <li class="with-hover">
+                                <a href="#services">услуги</a>
+                                <i class="hover-line"></i>
+                            </li>
+                            <li class="with-hover">
+                                <a href="#portfolio">портфолио</a>
+                                <i class="hover-line"></i>
+                            </li>
+                        {% else %}
+                            <li class="with-hover">
+                                <a href="#about-us">About Us</a>
+                                <i class="hover-line"></i>
+                            </li>
+                            <li class="with-hover">
+                                <a href="#services">Services</a>
+                                <i class="hover-line"></i>
+                            </li>
+                            <li class="with-hover">
+                                <a href="#portfolio">Portfolio</a>
+                                <i class="hover-line"></i>
+                            </li>
+                        {% endif %}
                     </ul>
                 </div>
                 <div class="topnav-right">
-                    <a id="cont" class="opaque">CONTACT US</a>
+                    {% if lang == 'ua' %} 
+                        <a id="cont" class="opaque">ЗВ'ЯЗАТИСЬ</a>
+                    {% elif lang == 'ru'%}
+                        <a id="cont" class="opaque">СВЯЗАТЬСЯ</a>
+                    {% else %}
+                        <a id="cont" class="opaque">CONTACT US</a>
+                    {% endif %}
                     <a id="mobile-menu-burger" class="mobile close">
                         <img src="{% static 'content/img/burger.png' %}" alt="menu burger">
                     </a>
@@ -75,19 +109,52 @@
         <section id="about-us">
             <div class="dark-bg" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-id="about-us">
                 <div class="halfs-row">
-                        <!-- ABOUT US TEXT -->
-                    <div class="halfblock fromtop-animation" data-aos="fade-down" data-aos-delay="400" data-aos-duration="800">
-                        <h2>Our Team</h2>
-                        <img src="{% static 'content/img/gradient-line.png' %}" alt="line" class="gradline">
-                        <p class="halftext description">
-                            We help businesses grow by telling their story & creating amazing digital experiences. <br><br>We are the team of young yet experienced perfectionists, provides full-cycle of services helping your company to become a leading representative on the Web.
-                        </p>
-                        <div class="halftext center-text-mobile round-btn">
-                            <a href="#services">
-                                What do we do?
-                            </a>
+                    <!-- ABOUT US TEXT -->
+                    {% if lang == 'ua' %} 
+                        <div class="halfblock fromtop-animation" data-aos="fade-down" data-aos-delay="400" data-aos-duration="800">
+                            <h2>Про Нас</h2>
+                            <img src="{% static 'content/img/gradient-line.png' %}" alt="line" class="gradline">
+                            <p class="halftext description">
+                                Ми допомагаємо компаніям зростати, розповідаємо їхню історію та створюємо дивовижні цифрові враження.<br>
+                                <br>
+                                Ми — команда молодих, втім досвідчених перфекціоністів, котрі надають повний спектр послуг, що допоможе вашій компанії впевнено завойовувати онлайн-простір.</p>
+                            <div class="halftext center-text-mobile round-btn">
+                                <a href="#services">
+                                    Чим ми займаємося?
+                                </a>
+                            </div>
                         </div>
-                    </div>
+                    {% elif lang == 'ru'%}
+                        <div class="halfblock fromtop-animation" data-aos="fade-down" data-aos-delay="400" data-aos-duration="800">
+                            <h2>О Нас</h2>
+                            <img src="{% static 'content/img/gradient-line.png' %}" alt="line" class="gradline">
+                            <p class="halftext description">
+                                Мы помогаем компаниям расти, рассказывая их историю и создавая удивительные цифровые впечатления.
+                                <br><br>
+                                Мы помогаем компаниям рассказать свою историю с помощью всех cutting edge цифровых инструментов.
+                                <br><br>
+                                Мы — команда молодых, однако опытных перфекционистов, которые предоставляют полный спектр услуг, помогающих вашей компании уверенно завоевывать онлайн-пространство.</p>
+                            <div class="halftext center-text-mobile round-btn">
+                                <a href="#services">
+                                    Чем мы занимаемся?
+                                </a>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="halfblock fromtop-animation" data-aos="fade-down" data-aos-delay="400" data-aos-duration="800">
+                            <h2>Our Team</h2>
+                            <img src="{% static 'content/img/gradient-line.png' %}" alt="line" class="gradline">
+                            <p class="halftext description">
+                                We help businesses grow by telling their story & creating amazing digital experiences. <br><br>We are the team of young yet experienced perfectionists, provides full-cycle of services helping your company to become a leading representative on the Web.
+                            </p>
+                            <div class="halftext center-text-mobile round-btn">
+                                <a href="#services">
+                                    What do we do?
+                                </a>
+                            </div>
+                        </div>
+                    {% endif %}
+                    
 
                     <!-- OUR BLOG TEXT -->
                     <div class="halfblock fromtop-animation" data-aos="fade-down" data-aos-delay="450" data-aos-duration="800">
@@ -100,74 +167,187 @@
                                     Read more
                                 </a>
                             </div>
-                            
                     </div>
                 </div>
 
                 <div id="progress-block">
-                    <div class="agile" data-aos="fade-down" data-aos-delay="450" data-aos-duration="1000">
-                        <h4>Need an agile team?</h4>
-                        <p>Hire us to design, develop and promote web & mobile apps for your business</p>
-                    </div>
-                    <div id="progress-steps">
-                        <div class="step">
-                            <div class="numba">
-                                <div></div>
-                                <span>1</span>
+                    {% if lang == 'ua' %}
+                        <div class="agile" data-aos="fade-down" data-aos-delay="450" data-aos-duration="1000">
+                            <h4>Потрібна креативна команда?</h4>
+                            <p>Найміть нас для створення веб-/мобільного додатку для вашого бізнесу.</p>
+                        </div>
+                        <div id="progress-steps">
+                            <div class="step">
+                                <div class="numba">
+                                    <div></div>
+                                    <span>1</span>
+                                </div>
+                                <div class="step-text">
+                                    <h5 data-aos="fade-down" data-aos-delay="1500" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Консультуємо</h5>
+                                    <p data-aos="fade-down" data-aos-delay="1700" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Ми ознайомимося з поточним станом технологій, дизайну та маркетингу вашого продукту та запропонуємо ідеї їхнього покращення.</p>
+                                </div>
                             </div>
-                            <div class="step-text">
-                                <h5 data-aos="fade-down" data-aos-delay="1500" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">We advice</h5>
-                                <p data-aos="fade-down" data-aos-delay="1700" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">We'll take a look at your current state of technology, design and marketing, examine your cases and suggest you a space for improvement.</p>
+                            <div class="step">
+                                <div class="numba">
+                                    <div></div>
+                                    <span>2</span>
+                                </div>
+                                <div class="step-text">
+                                    <h5 data-aos="fade-down" data-aos-delay="1800" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Створюємо дизайн продукту</h5>
+                                    <p data-aos="fade-down" data-aos-delay="2000" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Ви надаєте ідею, ми робимо все інше. UI/UX дизайн.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="numba">
+                                    <div></div>
+                                    <span>3</span>
+                                </div>
+                                <div class="step-text">
+                                    <h5 data-aos="fade-down" data-aos-delay="2100" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Розробляємо додаток</h5>
+                                    <p data-aos="fade-down" data-aos-delay="2300" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Цілком задоволені виглядом продукту? Отже, час доєднати команду розробки додатку.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="numba">
+                                    <div></div>
+                                    <span>4</span>
+                                </div>
+                                <div class="step-text">
+                                    <h5 data-aos="fade-down" data-aos-delay="2400" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Просуваємо продукт</h5>
+                                    <p data-aos="fade-down" data-aos-delay="2600" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Після випуску продукту основним завданням постає організація маркетингової кампанії та залучення якомога більшої кількості користувачів.</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="step">
-                            <div class="numba">
-                                <div></div>
-                                <span>2</span>
+                    {% elif lang == 'ru'%}
+                        <div class="agile" data-aos="fade-down" data-aos-delay="450" data-aos-duration="1000">
+                            <h4>Нужна креативная команда?</h4>
+                            <p>Мы поможем вам пройти процесс диджитализации вашей компании, который состоит из следующих этапов:</p>
+                        </div>
+                        <div id="progress-steps">
+                            <div class="step">
+                                <div class="numba">
+                                    <div></div>
+                                    <span>1</span>
+                                </div>
+                                <div class="step-text">
+                                    <h5 data-aos="fade-down" data-aos-delay="1500" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Консультируем</h5>
+                                    <p data-aos="fade-down" data-aos-delay="1700" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Мы ознакомимся с текущим состоянием технологий, дизайна и маркетинга вашего продукта, и предложим идеи для их улучшения.</p>
+                                </div>
                             </div>
-                            <div class="step-text">
-                                <h5 data-aos="fade-down" data-aos-delay="1800" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">We design product</h5>
-                                <p data-aos="fade-down" data-aos-delay="2000" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">You bring an idea, we do all the rest. UI/UX design included.</p>
+                            <div class="step">
+                                <div class="numba">
+                                    <div></div>
+                                    <span>2</span>
+                                </div>
+                                <div class="step-text">
+                                    <h5 data-aos="fade-down" data-aos-delay="1800" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Создаем дизайн продукта</h5>
+                                    <p data-aos="fade-down" data-aos-delay="2000" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Вы предоставляете идею, мы делаем все остальное. Проводим UI/UX-аудит и разрабатываем новый концепт продукта.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="numba">
+                                    <div></div>
+                                    <span>3</span>
+                                </div>
+                                <div class="step-text">
+                                    <h5 data-aos="fade-down" data-aos-delay="2100" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Разрабатываем приложениe</h5>
+                                    <p data-aos="fade-down" data-aos-delay="2300" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Довольны тем, как выглядит продукт? Самое время подключить команды разработки для создания приложения.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="numba">
+                                    <div></div>
+                                    <span>4</span>
+                                </div>
+                                <div class="step-text">
+                                    <h5 data-aos="fade-down" data-aos-delay="2400" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Продвигаем продукт</h5>
+                                    <p data-aos="fade-down" data-aos-delay="2600" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">После выпуска продукта наша главная задача — провести маркетинговую кампанию и помочь привлечь пользователей.</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="step">
-                            <div class="numba">
-                                <div></div>
-                                <span>3</span>
+                    {% else %}
+                        <div class="agile" data-aos="fade-down" data-aos-delay="450" data-aos-duration="1000">
+                            <h4>Need an agile team?</h4>
+                            <p>Hire us to design, develop and promote web & mobile apps for your business</p>
+                        </div>
+                        <div id="progress-steps">
+                            <div class="step">
+                                <div class="numba">
+                                    <div></div>
+                                    <span>1</span>
+                                </div>
+                                <div class="step-text">
+                                    <h5 data-aos="fade-down" data-aos-delay="1500" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">We advice</h5>
+                                    <p data-aos="fade-down" data-aos-delay="1700" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">We'll take a look at your current state of technology, design and marketing, examine your cases and suggest you a space for improvement.</p>
+                                </div>
                             </div>
-                            <div class="step-text">
-                                <h5 data-aos="fade-down" data-aos-delay="2100" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">We develop software</h5>
-                                <p data-aos="fade-down" data-aos-delay="2300" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Are you satisfied with your product/market fit? Then it's time to alarm frontend and backend development teams.</p>
+                            <div class="step">
+                                <div class="numba">
+                                    <div></div>
+                                    <span>2</span>
+                                </div>
+                                <div class="step-text">
+                                    <h5 data-aos="fade-down" data-aos-delay="1800" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">We design product</h5>
+                                    <p data-aos="fade-down" data-aos-delay="2000" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">You bring an idea, we do all the rest. UI/UX design included.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="numba">
+                                    <div></div>
+                                    <span>3</span>
+                                </div>
+                                <div class="step-text">
+                                    <h5 data-aos="fade-down" data-aos-delay="2100" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">We develop software</h5>
+                                    <p data-aos="fade-down" data-aos-delay="2300" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Are you satisfied with your product/market fit? Then it's time to alarm frontend and backend development teams.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="numba">
+                                    <div></div>
+                                    <span>4</span>
+                                </div>
+                                <div class="step-text">
+                                    <h5 data-aos="fade-down" data-aos-delay="2400" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">We promote product</h5>
+                                    <p data-aos="fade-down" data-aos-delay="2600" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Released your product? Now it’s time to spread the word and bringing new users to enjoy it.</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="step">
-                            <div class="numba">
-                                <div></div>
-                                <span>4</span>
-                            </div>
-                            <div class="step-text">
-                                <h5 data-aos="fade-down" data-aos-delay="2400" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">We promote product</h5>
-                                <p data-aos="fade-down" data-aos-delay="2600" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Released your product? Now it’s time to spread the word and bringing new users to enjoy it.</p>
-                            </div>
-                        </div>
-                    </div>
+                    {% endif %}
                 </div>
+
             </div>
         </section>
 
         <section id="services">
             <div class="dark-bg" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-id="services">
                 <div class="fromtop-animation" data-aos="fade-down" data-aos-delay="400" data-aos-duration="800">
-                    <h2>Our Services</h2>
+                    {% if lang == 'ua' %} 
+                        <h2>Наші послуги</h2>
+                    {% elif lang == 'ru'%}
+                        <h2>Наши Услуги</h2>
+                    {% else %}
+                        <h2>Our Services</h2>
+                    {% endif %}
                     <img src="{% static 'content/img/gradient-line.png' %}" alt="line" class="gradline">
                 </div>
 
                 <div class="services-icons">
                     <div class="service">
                         <img src="{% static 'content/img/service1.svg' %}">
-                        <h5>Website development</h5>
-                        <p>We create pixel-perfect web-based internet apps, e-commerce sites, and social networks to give your customers more than they expect from you.</p>
-                        <a href="">CONTACT US</a>
+                        {% if lang == 'ua' %} 
+                            <h5>Website development</h5>
+                            <p>We create pixel-perfect web-based internet apps, e-commerce sites, and social networks to give your customers more than they expect from you.</p>
+                            <a href="">CONTACT US</a>
+                        {% elif lang == 'ru'%}
+                            <h5>Website development</h5>
+                            <p>We create pixel-perfect web-based internet apps, e-commerce sites, and social networks to give your customers more than they expect from you.</p>
+                            <a href="">CONTACT US</a>
+                        {% else %}
+                            <h5>Website development</h5>
+                            <p>We create pixel-perfect web-based internet apps, e-commerce sites, and social networks to give your customers more than they expect from you.</p>
+                            <a href="">CONTACT US</a>
+                        {% endif %}
+                        
                     </div>
                     <div class="service">
                         <img src="{% static 'content/img/service2.svg' %}">
@@ -188,8 +368,14 @@
                         <a href="">CONTACT US</a>
                     </div>
                 </div>
-
-                <h3 data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000" >Our clients</h3>
+                
+                {% if lang == 'ua' %} 
+                    <h3 data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000" >Наші клієнти</h3>
+                {% elif lang == 'ru'%}
+                    <h3 data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000" >Наши клиенты</h3>
+                {% else %}
+                    <h3 data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000" >Our clients</h3>
+                {% endif %}
                 <div id="clients">
                     <div class="imgrow">
                         <img class="client_logo child0 displayed-logo" data-aos="fade-right" data-aos-delay="800" data-aos-duration="1000" src="{% static 'content/img/logos/colins-logo.png' %}" data-aos-anchor="#clients">
@@ -220,65 +406,16 @@
             </div>
         </section>
 
-        <!-- OLD SERVICES -->
-        <section id="services-old" style="display: none;">
-            <div class="dark-bg" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-id="services">
-                <div class="fromtop-animation" data-aos="fade-down" data-aos-delay="400" data-aos-duration="800">
-                    <h2>Our Services</h2>
-                    <img src="{% static 'content/img/gradient-line.png' %}" alt="line" class="gradline">
-                </div>
-
-                <div id="services-text" class="flex">
-                    <div class="row-2 flex"> 
-                        <div class="first-col">
-                            <h5>Website development</h5>
-                            <div class="flex first-services-col">
-                                <ul>
-                                    <li class="flex"><span class="name">Landing page</span><span class="price">from 800$</span></li>
-                                    <li class="flex"><span class="name">Corporate website</span><span class="price">from 2000$</span></li>
-                                    <li class="flex"><span class="name">E-commerce</span><span class="price">from 5000$</span></li>
-                                    <li class="flex"><span class="name">Services & Portals</span><span class="price">from 8000$</span></li>
-                                    <li class="flex"><span class="name">Individual</span><span class="price">On request</span></li>
-                                </ul>
-                                <p>We create pixel-perfect web-based internet apps, e-commerce sites, and social networks to give your customers more than they could expect.</p>
-                            </div>
-                        </div>
-                        <div class="second-col">
-                            <div class="info">
-                                <h5>Identics</h5>
-                                <h6>On request</h6>
-                                <p>We make high-quality visual designs—from concept to execution. Create and iterate on assets that reflect a brand, enforce a language, and inject beauty and life into a product.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row-2 flex"> 
-                        <div class="first-col">
-                            <h5>SEO/SMM</h5>
-                            <div class="flex first-services-col">
-                                <ul>
-                                    <li class="flex"><span class="name">SEO</span><span class="price">from 600$</span></li>
-                                    <li class="flex"><span class="name">SERM</span><span class="price">from 1200$</span></li>
-                                    <li class="flex"><span class="name">Content-based ads</span><span class="price">from 200$</span></li>
-                                    <li class="flex"><span class="name">SMM</span><span class="price">from 400$</span></li>
-                                </ul>
-                                <p>Social media management involves so much more than just publishing content. Brands need to utilise these channels to tell their story and engage with their audience.</p>
-                            </div>
-                        </div>
-                        <div class="second-col">
-                            <div class="info">
-                                <h5>Digital-services</h5>
-                                <h6>On request</h6>
-                                <p>We create meaningful experiences that enable business growth, transform brands & improve customer experience.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="portfolio">
             <div class="portfolio-bg" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-id="portfolio">
-                <h2>Our works</h2>
+                
+                {% if lang == 'ua' %} 
+                    <h2>Наші роботи</h2>
+                {% elif lang == 'ru'%}
+                    <h2>Наши работы</h2>
+                {% else %}
+                    <h2>Our works</h2>
+                {% endif %}
                 <img src="{% static 'content/img/gradient-line.png' %}" alt="line" class="gradline">
                 <div id="projects-grid">
 
