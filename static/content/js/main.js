@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var preloader = true;
     }
 
-    // preloader = false; // temporary
+    preloader = false; // temporary
 
     // ON/OFF preloader animation for dev puproses
     if (!preloader){
@@ -242,11 +242,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // AJAX for posting
     function create_post() {
-        var form_data = new FormData($('#contattaci')[0]);
+        var formData = new FormData($('#contattaci')[0]);
+        formData.append('csrfmiddlewaretoken', window.CSRF_TOKEN);
         $.ajax({
-            url : "/form_submit", // the endpoint
+            url : "/form_submit/", // the endpoint
             type : "POST", // http method
-            data : form_data, // data sent with the post request
+            data : formData, // data sent with the post request
             contentType: false,
             cache: false,
             processData: false,
