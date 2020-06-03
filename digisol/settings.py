@@ -74,6 +74,13 @@ EMAIL_HOST_USER = 'digisol.wpmail@gmail.com'
 EMAIL_HOST_PASSWORD = '2r,u8XZC[gF,YX~H'
 EMAIL_PORT = 587
 
+# CKEeditor
+CKEDITOR_CONFIGS = {
+    'default': {
+        'autoParagraph': False
+    },
+}
+
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
