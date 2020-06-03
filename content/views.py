@@ -2,7 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse, Http404, JsonResponse
 from django.core.mail import EmailMessage
 from django.views.decorators.csrf import csrf_exempt
-from content.models import SliderPageText, UserRequest, AboutUsText
+from content.models import (SliderPageText, UserRequest, AboutUsText, 
+                            ClientImage)
 
 
 
@@ -10,6 +11,7 @@ def main_page(request, lang='ru'):
     context = {}
     context['slider'] = SliderPageText.objects.first()
     context['about_us'] = AboutUsText.objects.first()
+    context['clients'] = ClientImage.objects.all()
     if lang not in ['ru', 'ua', 'en']:
         raise Http404("Page doesn't exist")
     context['lang'] = lang

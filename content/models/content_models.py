@@ -69,6 +69,26 @@ class AboutUsText(SingletonModel):
     step4_text_ru = models.TextField(default='')
 
 
+class ClientImage(models.Model):
+    image = models.FileField(upload_to='clients/')
+
+    def __str__(self):
+        return self.image.url
+
+    def save(self):
+        """Limit maximum quantity of images to grid size (4x2)"""
+
+        if not self.id and ClientImage.objects.count() > 7:
+            return # 
+        else:
+            super().save()  #"real" save() method.
+
+    @property
+    def delay(self):
+        index = ClientImage.objects.filter(id__lt = self.id).count()
+        return 800 + 50 * index
+
+
 # class SliderProject(models.Model):
 #     background = models.ImageField(default='#', upload_to='#')
 #     slider = models.ForeignKey(SliderPageText, on_delete=models.CASCADE)

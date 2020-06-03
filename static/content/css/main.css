@@ -751,6 +751,9 @@ section h2{
 
 .imgrow{
   margin-top: 3.5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .imgrow .break1{
@@ -766,6 +769,8 @@ section h2{
   width: 14%;
   filter: grayscale(100%) brightness(0.6);
   animation-delay: 1s;
+  height: 7vw;
+  object-fit: contain;
 }
 
 .client_logo{

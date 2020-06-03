@@ -123,8 +123,8 @@ STATIC_URL = '/static/'
 # use different settings for local development and production server
 RUNNING_DEVSERVER = (len(sys.argv) > 1 and sys.argv[1] == 'runserver')
 # RUNNING_DEVSERVER = True
-MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 
 DATABASES = {

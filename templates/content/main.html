@@ -369,23 +369,14 @@
                 {% endif %}
                 <div id="clients">
                     <div class="imgrow">
-                        <img class="client_logo child0 displayed-logo" data-aos="fade-right" data-aos-delay="800" data-aos-duration="1000" src="{% static 'content/img/logos/colins-logo.png' %}" data-aos-anchor="#clients">
-                        <span class="break1 desktop"></span>
-                        <img class="client_logo child1 displayed-logo" data-aos="fade-right" data-aos-delay="850" data-aos-duration="1000" src="{% static 'content/img/logos/exclusive-logo.svg' %}" data-aos-anchor="#clients">
-                        <span class="break2 desktop"></span>
-                        <img class="client_logo child0 hidden-logo" data-aos="fade-right" data-aos-delay="900" data-aos-duration="1000" src="{% static 'content/img/logos/leafus-logo.png' %}" data-aos-anchor="#clients">
-                        <span class="break1 desktop"></span>
-                        <img class="client_logo child0 hidden-logo" data-aos="fade-right" data-aos-delay="950" data-aos-duration="1000" src="{% static 'content/img/logos/kimberly-logo.png' %}" data-aos-anchor="#clients">
+                        {% for client in clients|slice:":4" %}
+                        <img class="client_logo child0 displayed-logo" data-aos="fade-right" data-aos-delay="{{ client.delay }}" data-aos-duration="1000" src="{{ client.image.url }}" data-aos-anchor="#clients">
+                        {% endfor %}
                     </div>
                     <div class="imgrow">
-                        <img class="client_logo child0 hidden-logo" data-aos="fade-right" data-aos-delay="850" data-aos-duration="1000" src="{% static 'content/img/logos/nestle-logo.png' %}" data-aos-anchor="#clients">
-                        <span class="break1 desktop"></span>
-                        <img class="client_logo child1 hidden-logo" data-aos="fade-right" data-aos-delay="900" data-aos-duration="1000" src="{% static 'content/img/logos/bari-logo.png' %}" id="bari" data-aos-anchor="#clients">
-                        <span class="break2 desktop"></span>
-                        <img class="client_logo child1 hidden-logo" data-aos="fade-right" data-aos-delay="1000" data-aos-duration="1000" src="{% static 'content/img/logos/nof-logo.svg' %}" data-aos-anchor="#clients">
-                        <span class="break1 desktop"></span>
-                        <img class="client_logo child1 hidden-logo" data-aos="fade-right" data-aos-delay="950" data-aos-duration="1000" src="{% static 'content/img/logos/up-logo.png' %}" data-aos-anchor="#clients">
-                        
+                        {% for client in clients|slice:"4:" %}
+                        <img class="client_logo child0 displayed-logo" data-aos="fade-right" data-aos-delay="{{ client.delay }}" data-aos-duration="1000" src="{{ client.image.url }}" data-aos-anchor="#clients">
+                        {% endfor %}
                     </div>
                 </div>
                 <a class="cl-prev mobile">
