@@ -1,5 +1,6 @@
 {% extends "content/layout.html" %}
 {% load static %}
+{% load class_tags %}
 {% block body %}
 <body>
     <!-- Mobile menu -->
@@ -114,12 +115,10 @@
                         <div class="halfblock fromtop-animation" data-aos="fade-down" data-aos-delay="400" data-aos-duration="800">
                             <h2>{{ about_us.title_ua }}</h2>
                             <img src="{% static 'content/img/gradient-line.png' %}" alt="line" class="gradline">
-                            <p class="halftext description">
-                                {{ about_us.text_ua }}
-                            </p>
+                                {{ about_us.text_ua|add_class:"halftext description" }}
                             <div class="halftext center-text-mobile round-btn">
                                 <a href="#services">
-                                    Чим ми займаємося?
+                                    {{ about_us.button_ua }}
                                 </a>
                             </div>
                         </div>
@@ -127,12 +126,10 @@
                         <div class="halfblock fromtop-animation" data-aos="fade-down" data-aos-delay="400" data-aos-duration="800">
                             <h2>{{ about_us.title_ru }}</h2>
                             <img src="{% static 'content/img/gradient-line.png' %}" alt="line" class="gradline">
-                            <p class="halftext description">
-                                {{ about_us.text_ru }}
-                            </p>
+                                {{ about_us.text_ru|add_class:"halftext description" }}
                             <div class="halftext center-text-mobile round-btn">
                                 <a href="#services">
-                                    Чем мы занимаемся?
+                                    {{ about_us.button_ru }}
                                 </a>
                             </div>
                         </div>
@@ -140,12 +137,10 @@
                         <div class="halfblock fromtop-animation" data-aos="fade-down" data-aos-delay="400" data-aos-duration="800">
                             <h2>{{ about_us.title }}</h2>
                             <img src="{% static 'content/img/gradient-line.png' %}" alt="line" class="gradline">
-                            <p class="halftext description">
-                                {{ about_us.text }}
-                            </p>
+                                {{ about_us.text|add_class:"halftext description" }}
                             <div class="halftext center-text-mobile round-btn">
                                 <a href="#services">
-                                    What do we do?
+                                    {{ about_us.button }}
                                 </a>
                             </div>
                         </div>
@@ -169,8 +164,8 @@
                 <div id="progress-block">
                     {% if lang == 'ua' %}
                         <div class="agile" data-aos="fade-down" data-aos-delay="450" data-aos-duration="1000">
-                            <h4>Потрібна креативна команда?</h4>
-                            <p>Найміть нас для створення веб-/мобільного додатку для вашого бізнесу.</p>
+                            <h4>{{ about_us.subtitle_ua }}</h4>
+                            <p>{{ about_us.subtext_ua }}</p>
                         </div>
                         <div id="progress-steps">
                             <div class="step">
@@ -179,8 +174,8 @@
                                     <span>1</span>
                                 </div>
                                 <div class="step-text">
-                                    <h5 data-aos="fade-down" data-aos-delay="1500" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Консультуємо</h5>
-                                    <p data-aos="fade-down" data-aos-delay="1700" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Ми ознайомимося з поточним станом технологій, дизайну та маркетингу вашого продукту та запропонуємо ідеї їхнього покращення.</p>
+                                    <h5 data-aos="fade-down" data-aos-delay="1500" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom"><h4>{{ about_us.step1_title_ua }}</h4></h5>
+                                    <p data-aos="fade-down" data-aos-delay="1700" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">{{ about_us.step1_text_ua }}</p>
                                 </div>
                             </div>
                             <div class="step">
@@ -189,8 +184,8 @@
                                     <span>2</span>
                                 </div>
                                 <div class="step-text">
-                                    <h5 data-aos="fade-down" data-aos-delay="1800" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Створюємо дизайн продукту</h5>
-                                    <p data-aos="fade-down" data-aos-delay="2000" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Ви надаєте ідею, ми робимо все інше. UI/UX дизайн.</p>
+                                    <h5 data-aos="fade-down" data-aos-delay="1800" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">{{ about_us.step2_title_ua }}</h5>
+                                    <p data-aos="fade-down" data-aos-delay="2000" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">{{ about_us.step2_text_ua }}</p>
                                 </div>
                             </div>
                             <div class="step">
@@ -199,8 +194,8 @@
                                     <span>3</span>
                                 </div>
                                 <div class="step-text">
-                                    <h5 data-aos="fade-down" data-aos-delay="2100" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Розробляємо додаток</h5>
-                                    <p data-aos="fade-down" data-aos-delay="2300" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Цілком задоволені виглядом продукту? Отже, час доєднати команду розробки додатку.</p>
+                                    <h5 data-aos="fade-down" data-aos-delay="2100" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">{{ about_us.step3_title_ua }}</h5>
+                                    <p data-aos="fade-down" data-aos-delay="2300" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">{{ about_us.step3_text_ua }}</p>
                                 </div>
                             </div>
                             <div class="step">
@@ -209,15 +204,15 @@
                                     <span>4</span>
                                 </div>
                                 <div class="step-text">
-                                    <h5 data-aos="fade-down" data-aos-delay="2400" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Просуваємо продукт</h5>
-                                    <p data-aos="fade-down" data-aos-delay="2600" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Після випуску продукту основним завданням постає організація маркетингової кампанії та залучення якомога більшої кількості користувачів.</p>
+                                    <h5 data-aos="fade-down" data-aos-delay="2400" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">{{ about_us.step4_title_ua }}</h5>
+                                    <p data-aos="fade-down" data-aos-delay="2600" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">{{ about_us.step4_text_ua }}</p>
                                 </div>
                             </div>
                         </div>
                     {% elif lang == 'ru'%}
                         <div class="agile" data-aos="fade-down" data-aos-delay="450" data-aos-duration="1000">
-                            <h4>Нужна креативная команда?</h4>
-                            <p>Мы поможем вам пройти процесс диджитализации вашей компании, который состоит из следующих этапов:</p>
+                            <h4>{{ about_us.subtitle_ru }}</h4>
+                            <p>{{ about_us.subtext_ru }}</p>
                         </div>
                         <div id="progress-steps">
                             <div class="step">
@@ -226,8 +221,8 @@
                                     <span>1</span>
                                 </div>
                                 <div class="step-text">
-                                    <h5 data-aos="fade-down" data-aos-delay="1500" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Консультируем</h5>
-                                    <p data-aos="fade-down" data-aos-delay="1700" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Мы ознакомимся с текущим состоянием технологий, дизайна и маркетинга вашего продукта, и предложим идеи для их улучшения.</p>
+                                    <h5 data-aos="fade-down" data-aos-delay="1500" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">{{ about_us.step1_title_ru }}</h5>
+                                    <p data-aos="fade-down" data-aos-delay="1700" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">{{ about_us.step1_text_ru }}</p>
                                 </div>
                             </div>
                             <div class="step">
@@ -236,8 +231,8 @@
                                     <span>2</span>
                                 </div>
                                 <div class="step-text">
-                                    <h5 data-aos="fade-down" data-aos-delay="1800" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Создаем дизайн продукта</h5>
-                                    <p data-aos="fade-down" data-aos-delay="2000" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Вы предоставляете идею, мы делаем все остальное. Проводим UI/UX-аудит и разрабатываем новый концепт продукта.</p>
+                                    <h5 data-aos="fade-down" data-aos-delay="1800" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">{{ about_us.step2_title_ru }}</h5>
+                                    <p data-aos="fade-down" data-aos-delay="2000" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">{{ about_us.step2_text_ru }}</p>
                                 </div>
                             </div>
                             <div class="step">
@@ -246,8 +241,8 @@
                                     <span>3</span>
                                 </div>
                                 <div class="step-text">
-                                    <h5 data-aos="fade-down" data-aos-delay="2100" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Разрабатываем приложениe</h5>
-                                    <p data-aos="fade-down" data-aos-delay="2300" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Довольны тем, как выглядит продукт? Самое время подключить команды разработки для создания приложения.</p>
+                                    <h5 data-aos="fade-down" data-aos-delay="2100" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">{{ about_us.step3_title_ru }}</h5>
+                                    <p data-aos="fade-down" data-aos-delay="2300" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">{{ about_us.step3_text_ru }}</p>
                                 </div>
                             </div>
                             <div class="step">
@@ -256,15 +251,15 @@
                                     <span>4</span>
                                 </div>
                                 <div class="step-text">
-                                    <h5 data-aos="fade-down" data-aos-delay="2400" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Продвигаем продукт</h5>
-                                    <p data-aos="fade-down" data-aos-delay="2600" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">После выпуска продукта наша главная задача — провести маркетинговую кампанию и помочь привлечь пользователей.</p>
+                                    <h5 data-aos="fade-down" data-aos-delay="2400" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">{{ about_us.step4_title_ru }}</h5>
+                                    <p data-aos="fade-down" data-aos-delay="2600" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">{{ about_us.step4_text_ru }}</p>
                                 </div>
                             </div>
                         </div>
                     {% else %}
                         <div class="agile" data-aos="fade-down" data-aos-delay="450" data-aos-duration="1000">
-                            <h4>Need an agile team?</h4>
-                            <p>Hire us to design, develop and promote web & mobile apps for your business</p>
+                            <h4>{{ about_us.subtitle }}</h4>
+                            <p>{{ about_us.subtext }}</p>
                         </div>
                         <div id="progress-steps">
                             <div class="step">
@@ -273,8 +268,8 @@
                                     <span>1</span>
                                 </div>
                                 <div class="step-text">
-                                    <h5 data-aos="fade-down" data-aos-delay="1500" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">We advice</h5>
-                                    <p data-aos="fade-down" data-aos-delay="1700" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">We'll take a look at your current state of technology, design and marketing, examine your cases and suggest you a space for improvement.</p>
+                                    <h5 data-aos="fade-down" data-aos-delay="1500" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">{{ about_us.step1_title }}</h5>
+                                    <p data-aos="fade-down" data-aos-delay="1700" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">{{ about_us.step1_text }}</p>
                                 </div>
                             </div>
                             <div class="step">
@@ -283,8 +278,8 @@
                                     <span>2</span>
                                 </div>
                                 <div class="step-text">
-                                    <h5 data-aos="fade-down" data-aos-delay="1800" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">We design product</h5>
-                                    <p data-aos="fade-down" data-aos-delay="2000" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">You bring an idea, we do all the rest. UI/UX design included.</p>
+                                    <h5 data-aos="fade-down" data-aos-delay="1800" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">{{ about_us.step2_title }}</h5>
+                                    <p data-aos="fade-down" data-aos-delay="2000" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">{{ about_us.step2_text }}</p>
                                 </div>
                             </div>
                             <div class="step">
@@ -293,8 +288,8 @@
                                     <span>3</span>
                                 </div>
                                 <div class="step-text">
-                                    <h5 data-aos="fade-down" data-aos-delay="2100" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">We develop software</h5>
-                                    <p data-aos="fade-down" data-aos-delay="2300" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Are you satisfied with your product/market fit? Then it's time to alarm frontend and backend development teams.</p>
+                                    <h5 data-aos="fade-down" data-aos-delay="2100" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">{{ about_us.step3_title }}</h5>
+                                    <p data-aos="fade-down" data-aos-delay="2300" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">{{ about_us.step3_text }}</p>
                                 </div>
                             </div>
                             <div class="step">
@@ -303,8 +298,8 @@
                                     <span>4</span>
                                 </div>
                                 <div class="step-text">
-                                    <h5 data-aos="fade-down" data-aos-delay="2400" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">We promote product</h5>
-                                    <p data-aos="fade-down" data-aos-delay="2600" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">Released your product? Now it’s time to spread the word and bringing new users to enjoy it.</p>
+                                    <h5 data-aos="fade-down" data-aos-delay="2400" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">{{ about_us.step4_title }}</h5>
+                                    <p data-aos="fade-down" data-aos-delay="2600" data-aos-duration="1000" data-aos-anchor="#progress-block" data-aos-anchor-placement="bottom-bottom">{{ about_us.step4_text }}</p>
                                 </div>
                             </div>
                         </div>

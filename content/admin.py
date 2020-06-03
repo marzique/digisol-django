@@ -14,5 +14,5 @@ class UserRequest(admin.ModelAdmin):
 
 @admin.register(AboutUsText)
 class AboutUsText(admin.ModelAdmin):
-    list_display = ('title', 'title_ua', 'title_ru', 'text')
+    list_display = ('title', 'text')
 
