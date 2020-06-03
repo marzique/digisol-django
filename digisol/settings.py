@@ -27,6 +27,9 @@ INSTALLED_APPS = [
 
     # custom apps
     'content',
+
+    # 3rd party
+    'ckeditor',
 ]
 
 MIDDLEWARE = [

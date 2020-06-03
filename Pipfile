@@ -7,10 +7,10 @@ verify_ssl = true
 
 [packages]
 django = "*"
+django-ckeditor = "*"
 
 [requires]
 python_version = "3.8"
-
 
 [scripts]
 migrate = "python manage.py migrate"
