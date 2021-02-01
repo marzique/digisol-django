@@ -70,8 +70,8 @@ WSGI_APPLICATION = 'digisol.wsgi.application'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'digisol.wpmail@gmail.com'
-EMAIL_HOST_PASSWORD = '2r,u8XZC[gF,YX~H'
+EMAIL_HOST_USER = 'SET_ME'
+EMAIL_HOST_PASSWORD = 'SET_ME'
 EMAIL_PORT = 587
 
 # CKEeditor
